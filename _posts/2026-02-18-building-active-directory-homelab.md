@@ -152,9 +152,8 @@ Check Default NAT Network
   ```
 You should see:
 
-```cpp
-  default active
-```
+  - default active
+
 If this unfortunately does not work, try these commands:
 
 ```bash
@@ -202,12 +201,11 @@ Configure:
 Now we will rename the Network Adapters
 
 1: Open:
+  - Control Panel
 
-    - Control Panel
+  - Network and Sharing Center
 
-    - Network and Sharing Center
-
-    - Change Adapter Settings
+  - Change Adapter Settings
 
 You should see and rename:
 
@@ -254,15 +252,15 @@ Add:
 
   NIC 1:
 
-    - Source: `default`
+  - Source: `default`
 
-    - Device mode: `e1000` (you can use virtio if you have the drivers installed, but for this I do not)
+  - Device mode: `e1000` (you can use virtio if you have the drivers installed, but for this I do not)
 
   NIC 2:
 
-    - Source: `intnet`
+  - Source: `intnet`
 
-    - Device model: `e1000`
+  - Device model: `e1000`
 
   **Apply**
 
