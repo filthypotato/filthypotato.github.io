@@ -38,7 +38,7 @@ Files needed to follow along:
   > If you are using VMWare or VirtualBox, steps may differ.
 
 ### Virtualization Platform
-  - [vert-manager (KVM/QEMU)](https://virt-manager.org/)
+  - [virt-manager (KVM/QEMU)](https://virt-manager.org/)
   - Virtualization must be enabled. (Intel VT-x or AMD-V)
 
 Terminal command to install rerequisites.
@@ -69,7 +69,7 @@ Then **log out** and log back
 ### Installations Files
 
  - [Windows Server 2025 ISO](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2025)
- - [Windows 10 ISO](https://www.microsoft.com/en-us/software-download/windows11)
+ - [Windows 11 ISO](https://www.microsoft.com/en-us/software-download/windows11)
 
 ### Verify Virtualization Support
 
@@ -88,9 +88,68 @@ You should see **`VT-x`** or **`AMD-V`**
 
 Download Virt Manager by using the steps above if you have not already.
 
-Click `Create a new mirtual machine` >
+Open Virt Manager in Terminal:
+```bash
+virt-manager
+```
 
+Click `Create a new virtual machine`
 
+- `Local install media (ISO Image, or CDROM)` > Forward
+
+- `Browse` for ISO Image
+
+- Select ISO Image for Windows Server 2025
+
+- Make sure on Chose the operating system you are installing -> `Microsoft Windows Server 2025` > Foward
+
+- Click `yes` on the next window
+
+These are the setup options that I used:
+- Hardware
+  - Base Memory: 4096MiB
+  - Processors: 2
+- Virtual Hard Disk:
+  - 60.00 GiB
+
+- CPUs: 1 or 2 is fine, depending on performance > Forward
+
+- Adjust storage size to what you want. 60G is ideal.
+
+- My boot drive did not have enough space, so `Select or create custom storage`
+
+- `Check` Customize configuration before install
+
+- On Network selection > Leave as Virtual Network 'default': NAT
+
+  - This prevents exposing your IP and Host system to the VM.
+
+- Make sure you have enough memory allocated, I used `4096`
+
+- Double check NIC tab is still set to `Virtual network 'default': NAT`
+
+Then top left of window pane > `Begin Installation`
+
+# DC: Windows Server Setup Wizard
+
+Select Options as they appear:
+  - Select the operating system you would like installed
+
+    - Windows Server 2025 Standard Evaluation (Desktop Experience)
+
+  - Which type of installation do you want?
+
+    - Custom: Install Windows only (advanced)
+
+    - Click next to the following screem to select your default partition.
+
+  - Customize Settings:
+
+    - Password: Password1
+
+        - (Easy password makes it easy for lab setup)
+
+# Configuring NIC's (Internal/External Networks)
 
 
 
