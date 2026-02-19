@@ -19,7 +19,7 @@ title: Tylor Romine # the main title
 tagline: Cybersecurity | Homelab | Offensive Security # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
-    Write-ups, labs, and technical deep dives.
+    Write-ups, labs, and always learning!.
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
 url: "https://tylor-romine.com"
@@ -28,7 +28,7 @@ github:
   username: filthypotato # change to your GitHub username
 
 twitter:
-  username: filthypotato # change to your Twitter username
+  username: filthypotatoxx # change to your Twitter username
 
 social:
   # Change to your full name.
@@ -37,7 +37,7 @@ social:
   email: tylorromine94@gmail.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/filthypotato # change to your Twitter homepage
+    - https://twitter.com/filthypotatoxx # change to your Twitter homepage
   links:
     # The first element serves as the copyright owner's link
     - https://twitter.com/filthypotatoxx # change to your Twitter homepage
