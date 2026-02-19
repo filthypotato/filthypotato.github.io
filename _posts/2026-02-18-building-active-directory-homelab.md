@@ -1,7 +1,7 @@
 ---
 title: "Building an Active Directory Homelab"
 date: 2026-02-18 14:00:00 -0800
-avatar: "/assets/img/avatar.png"
+
 categories: [Homelab, Active Directory]
 tags: [Windows Server, AD, Cybersecurity]
 image:
