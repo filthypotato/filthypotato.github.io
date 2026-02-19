@@ -13,6 +13,8 @@ author: Tylor Romine
 ## Introduction
 
 In this lab, I set up an Active Directory Domain Controller using Windows Server 2025 and connected a Windows 10 client to simulate a real-world enterprise environment.
+By us connecting a Windows 11 client machine, and then using a PowerShell script to generate over 1000 user account, allows us for
+practical simulation and hand on learning with Active Directory, Group Policies,
 
 This homelab allows me to practice:
 
@@ -107,28 +109,19 @@ Click `Create a new virtual machine`
 
 These are the setup options that I used:
 - Hardware
-  - Base Memory: 4096MiB
-  - Processors: 2
+  - Memory: 4096MiB
+  - CPUs: 2
 - Virtual Hard Disk:
   - 60.00 GiB
+    - My boot drive did not have enough space, so `Select or create custom storage`
 
-- CPUs: 1 or 2 is fine, depending on performance > Forward
+- Network selection
+  - Virtual Network 'default': NAT
+    - This prevents exposing your IP and Host system to the VM.
 
-- Adjust storage size to what you want. 60G is ideal.
+- Now `Finish!`
 
-- My boot drive did not have enough space, so `Select or create custom storage`
-
-- `Check` Customize configuration before install
-
-- On Network selection > Leave as Virtual Network 'default': NAT
-
-  - This prevents exposing your IP and Host system to the VM.
-
-- Make sure you have enough memory allocated, I used `4096`
-
-- Double check NIC tab is still set to `Virtual network 'default': NAT`
-
-Then top left of window pane > `Begin Installation`
+**Great! You now have the Virtual Machine setup, the next steps will involve the Windows Setup Wizard inside of the VM**
 
 # DC: Windows Server Setup Wizard
 
@@ -150,6 +143,148 @@ Select Options as they appear:
         - (Easy password makes it easy for lab setup)
 
 # Configuring NIC's (Internal/External Networks)
+
+Check Default NAT Network
+  - In Arch termnial:
+
+  ```bash
+  virsh net-list --all
+  ```
+You should see:
+
+```cpp
+  default active
+```
+If this unfortunately does not work, try these commands:
+
+```bash
+  sudo virsh net-start default
+  sudo virsh net-autostart default
+```
+***This is the INTERNET network!***
+
+
+# Create Internal Network (INTNET)
+
+Open virt-manager:
+
+  - Edit -> Connection Details
+
+  - Virtual Networks
+
+  - Click + (Add Network)
+
+Configure:
+
+  - Name: `intnet`
+
+  - Mode: `Isolated`
+
+  - IPv4:
+
+    - Address: 172.16.0.1
+
+    - Netmask: 255.255.255.0
+
+  - Disable DHCP
+
+*Finish*
+
+**Now you should have:**
+
+  - `default` -> internet
+
+  - `intnet` -> internal lab
+
+
+# Inside Your Windows Server VM
+
+Now we will rename the Network Adapters
+
+1: Open:
+
+    - Control Panel
+
+    - Network and Sharing Center
+
+    - Change Adapter Settings
+
+You should see and rename:
+
+  - Ethernet -> _INTERNET_
+
+  - Ethernet 2 -> _INTNET_
+
+Right click the `_INTNET_` -> Properties
+Internet Protocol Version 4 -> Properties
+
+Set:
+
+  ```
+  IP: 172.16.0.1
+  Mask: 255.255.255.0
+  Gateway: (blank)
+  DNS: 127.0.0.1
+  ```
+Now we can rename the Server to DC
+
+- Start
+
+  - System
+
+  - Rename this PC
+
+Rename to:
+
+  `DC`
+
+***Now Restart***
+
+Now lets attach the Networks to the Windows Server VM
+
+Go inside `virt-manager`
+
+  - Right click Windows Server VM
+
+  - Open
+
+  - Show Hardware Details
+
+Add:
+
+  NIC 1:
+
+    - Source: `default`
+
+    - Device mode: `e1000` (you can use virtio if you have the drivers installed, but for this I do not)
+
+  NIC 2:
+
+    - Source: `intnet`
+
+    - Device model: `e1000`
+
+  **Apply**
+
+  *Now run VM!*
+
+Open Command Prompt inside of your Windows VM
+
+```ngnix
+ipconfig
+```
+
+You will see:
+
+```nginx
+_INTERNET_ -> DHCP address 192.168.x.x (or close too)
+_INTNET_ -> 172.16.0.1
+```
+This means it is working!
+
+
+
+
 
 
 

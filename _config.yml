@@ -17,7 +17,7 @@ timezone:
 title: Tylor Romine # the main title
 avatar: /assets/img/avatar.png
 
-tagline: Cybersecurity | Homelab | Automation # it will display as the subtitle
+tagline: Cybersecurity | Homelabs | Automation # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
     Write-ups, labs, and always learning!.
