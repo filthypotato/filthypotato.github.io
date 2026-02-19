@@ -12,7 +12,7 @@ author: Tylor Romine
 
 ## Introduction
 
-In this lab, I set up an Active Directory Domain Controller using Windows Server 2019 and connected a Windows 10 client to simulate a real-world enterprise environment.
+In this lab, I set up an Active Directory Domain Controller using Windows Server 2025 and connected a Windows 10 client to simulate a real-world enterprise environment.
 
 This homelab allows me to practice:
 
