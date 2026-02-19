@@ -15,7 +15,7 @@ timezone:
 # ↓ --------------------------
 
 title: Tylor Romine # the main title
-avatar: /assets/img/favicons/avatar.png
+avatar: /assets/img/avatar.png
 
 tagline: Cybersecurity | Homelab | Offensive Security # it will display as the subtitle
 
