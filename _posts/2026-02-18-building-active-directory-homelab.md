@@ -5,7 +5,7 @@ avatar: "/assets/img/avatar.png"
 categories: [Homelab, Active Directory]
 tags: [Windows Server, AD, Cybersecurity]
 image:
-  path: /assets/img/ad-banner.png
+  path: "/assets/img/ad-banner.png"
   alt: Active Directory
 author: Tylor Romine
 ---
