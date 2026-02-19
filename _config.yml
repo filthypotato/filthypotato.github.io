@@ -23,7 +23,6 @@ description: >- # used by seo meta and the atom feed
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
 url: "https://tylor-romine.com"
-baseurl: ""
 
 github:
   username: filthypotato # change to your GitHub username
@@ -39,7 +38,6 @@ social:
   links:
     # The first element serves as the copyright owner's link
     - https://twitter.com/filthypotato # change to your Twitter homepage
-  email: tylorromine94.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
     - https://twitter.com/filthypotatoxx # change to your Twitter homepage
