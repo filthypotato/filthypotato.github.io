@@ -8,13 +8,14 @@ image:
   path: "/assets/img/ad-banner.png"
   alt: Active Directory Setup
 author: Tylor Romine
+by: Tylor Romine
 ---
 
 ## Introduction
 
 In this lab, I set up an Active Directory Domain Controller using Windows Server 2025 and connected a Windows 10 client to simulate a real-world enterprise environment.
 By us connecting a Windows 11 client machine, and then using a PowerShell script to generate over 1000 user account, allows us for
-practical simulation and hand on learning with Active Directory, Group Policies,
+practical simulation and hand on learning with Active Directory, Group Policies, user management, and domain based configuration.
 
 This homelab allows me to practice:
 
@@ -27,7 +28,7 @@ This homelab allows me to practice:
 ## Network Overview
 
 - Windows Server (Domain Controller)
-- Windows 10 Client
+- Windows 11 Client
 - Internal NAT network
 - Static IP for DC
 - DNS pointed to DC
