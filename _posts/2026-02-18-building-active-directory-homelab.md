@@ -623,5 +623,54 @@ There is only one final step in joining the Domain Controller, and that is:
 
 When the VM reaches the sign in screen, you can now choose the “Other user” option and sign-in with any of the user accounts that we created earlier. A new profile will be built whenever a new user signs in.
 
+## Conclusion
 
-~To add in conclusion later~
+After publishing this lab, I noticed that the page was loading slower than expected. I ran a Cloudflare syntheic monitor and it showed me Largest Contentful Paint (LCP) was nearly 4 seconds.
+
+The issue turned out to be the hero image for this post. The original banner image was 3.8MB, which significantly delayed page rendering.
+
+In order to fix this, I:
+
+- Resized the image to 1200px width
+- Converted it from PNG to WebP
+- Stripped metadata
+- Reduced quality to 65 for optimal compression
+
+```bash
+magick assets/img/ad-banner.png -resize 1200x -strip -quality 65 assets/img/ad-banner.webp
+```
+
+After deploying the optimized image and purging Cloudflare cache, LCP improved from ~3.9s to 734ms and the performance score increased to 99.
+
+This was a good reminder that large media assets can drastically impact web performance, even on static sites.
+
+
+## Conclusion
+
+Building this Active Directory homelab gave me hands-on experience with core enterprise infrastructure concepts that are difficult to fully understand through theory alone.
+
+By configuring a Windows Server 2025 Domain Controller, joining a Windows 10 client to the domain, and automating user creation with PowerShell, I was able to simulate a small-scale enterprise environment. This lab reinforced how critical proper network configuration, DNS setup, and role management are in domain environments.
+
+Generating over 1,000 users with a script also highlighted how automation plays a major role in systems administration. In real-world environments, repetitive tasks are rarely performed manually. Understanding how to script and manage bulk changes is essential for scalability and security.
+
+This lab also helped me better understand:
+
+  - How domain authentication flows between client and controller
+
+  - The importance of internal DNS in Active Directory
+
+  - Organizational Units and user management at scale
+
+  - How Group Policy can be leveraged in structured environments
+
+Going forward, I plan to expand this lab by:
+
+  - Implementing Group Policy Objects (GPOs)
+
+  - Adding a file server role
+
+  - Simulating attack scenarios for detection practice
+
+  - Monitoring authentication logs and failed login attempts
+
+Overall, this project strengthened both my technical understanding of Active Directory and my ability to design, deploy, and troubleshoot enterprise-style infrastructure in a controlled environment.
