@@ -1,7 +1,7 @@
 ---
 title: "Case Study: USB File Invemtory, Hash Comparison, and Hex-Level Data Recovery"
 date: 2026-01-15 12:00:00 -0800
-categories: [Digital Forensics]
+categories: [Digital Forensics, Labs]
 tags: [Windows Forensics, Command Line, Hash Comparison, Hex Editor, File Carving]
 image:
   path: "/assets/img/hash-analysis-banner.png"
