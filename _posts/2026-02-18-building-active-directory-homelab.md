@@ -53,23 +53,23 @@ Terminal command to install rerequisites.
 ```bash
 sudo pacman -S --needed qemu-full virt-manager virt-viewer dnsmasq vde2 bridge-utils libvirt edk2-ovmf
 ```
-Enables and start libvirtd
+Noow time to Enable and Start libvirtd
 
 ```bash
 sudo systemctl enable --now libvirtd
 sudo usermod -aG libvirt $USER
 ```
-Checks if running
+Checks if libvirtd is running
 
 ```bash
 systemctl status libvirtd
 ```
-Adds yourself to the libvirt group
+Add yourself to the libvirt group
 
 ```bash
 sudo usermod -aG libvirt $USER
 ```
-Then **log out** and log back
+Then **log out** and log back in to set the permissions.
  (or reboot)
 
 
@@ -119,6 +119,7 @@ These are the setup options that I used:
   - 60.00 GiB
     - My boot drive did not have enough space, so `Select or create custom storage`
 
+
 - Network selection
   - Virtual Network 'default': NAT
     - This prevents exposing your IP and Host system to the VM.
@@ -145,6 +146,9 @@ Select Options as they appear:
     - Password: Password1
 
         - (Easy password makes it easy for lab setup)
+
+  > **Lab-only note:** I’m using simple passwords like `Password1` to keep the lab fast to rebuild.
+  > Do **not** do this in production.
 
 ### Configuring NIC's (Internal/External Networks)
 
