@@ -24,6 +24,7 @@ This set of labs was basically all about using hash sets the right way (known go
 I installed the latest **NSRL** hash database into Autopsy, then I created a separate **Known Hash Set** using `Known-Pseudo-Hashes.csv`.
 
 One of the issues I ran into was I opened the `.kdb` file by accident and it looked unreadable. That’s because it’s basically a SQLite database Autopsy uses internally, so it’s not meant to be opened like a normal file. Once I re-read the steps, I fixed it by opening the **.csv** in Notepad, copying the hash values, and pasting them into the new hash set in Autopsy.
+
 **Why this matters:** the “pseudo” hash set keeps Autopsy from flagging those fake Windows system files as suspicious during these projects.
 
 ---
@@ -39,6 +40,7 @@ For this one I used **FTK Imager** to generate **MD5 hashes** for five known bad
 ## OSFMount + WinHex (Bit-Shift Recovery)
 
 Here I mounted a forensic image using **OSFMount**, then used **WinHex** to figure out the data was bit-shifted. The fix was shifting the data **to the right by 1 bit**. After shifting and saving, I verified it worked by opening the file normally in File Explorer and it was readable again.
+
 **Why this matters:** sometimes files aren’t “deleted,” they’re just corrupted or shifted, and you can still recover them if you know what you’re looking at.
 
 ---
