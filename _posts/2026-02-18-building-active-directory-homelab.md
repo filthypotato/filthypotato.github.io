@@ -7,7 +7,6 @@ tags: [Windows Server, AD, Cybersecurity]
 image:
   path: "/assets/img/ad-banner.webp"
   alt: Active Directory Setup
-author: Tylor Romine
 ---
 
 ## Introduction
