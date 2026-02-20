@@ -8,7 +8,6 @@ image:
   path: "/assets/img/ad-banner.png"
   alt: Active Directory Setup
 author: Tylor Romine
-by: Tylor Romine
 ---
 
 ## Introduction
@@ -16,6 +15,11 @@ by: Tylor Romine
 In this lab, I set up an Active Directory Domain Controller using Windows Server 2025 and connected a Windows 10 client to simulate a real-world enterprise environment.
 By us connecting a Windows 10 client machine, and then using a PowerShell script to generate over 1000 user account, allows us for
 practical simulation and hand on learning with Active Directory, Group Policies, user management, and domain based configuration.
+
+## Lab Topology
+
+  > **Lab-only note:** I’m using simple passwords like `Password1` to keep the lab fast to rebuild.
+  > Do **not** do this in production.
 
 This homelab allows me to practice:
 
@@ -40,22 +44,21 @@ Files needed to follow along:
   > **Note:** This lab was built using virt-manager on a Linux host (KVM/QEMU)
   > If you are using VMWare or VirtualBox, steps may differ.
 
-### Virtualization Platform
+
+## Virtualization Platform
   - [virt-manager (KVM/QEMU)](https://virt-manager.org/)
   - Virtualization must be enabled. (Intel VT-x or AMD-V)
-
-
 
 Terminal command to install rerequisites.
 
 ```bash
-sudo pacman -S qemu virt-manager virt-viewer dnsmasq vde2 bridge-utils openbsd-netcat qemu-full virt-manager libvirt edk2-ovmf dnsmasq bridge-utils
+sudo pacman -S --needed qemu-full virt-manager virt-viewer dnsmasq vde2 bridge-utils libvirt edk2-ovmf
 ```
 Enables and start libvirtd
 
 ```bash
-sudo systemctl enable libvirtd
-sudo systemctl start libvirtd
+sudo systemctl enable --now libvirtd
+sudo usermod -aG libvirt $USER
 ```
 Checks if running
 
@@ -71,13 +74,13 @@ Then **log out** and log back
  (or reboot)
 
 
-### Installations Files
+## Installation Files
 
  - [Windows Server 2025 ISO](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2025)
  - [Windows 10 ISO](https://www.microsoft.com/en-us/software-download/windows10ISO)
  - [PowerShell Create Account Script w/ Names (GitHub)](https://github.com/filthypotato/ActiveDirectoryLab)
 
-### Verify Virtualization Support
+## Verify Virtualization Support
 
 Run:
 
@@ -87,8 +90,6 @@ lscpu | grep Virtualization
 
 You should see **`VT-x`** or **`AMD-V`**
 
-
-# Procedures
 
 ## Setting up Windows Server 2025
 
@@ -127,7 +128,7 @@ These are the setup options that I used:
 
 **Great! You now have the Virtual Machine setup, the next steps will involve the Windows Setup Wizard inside of the VM**
 
-# DC: Windows Server Setup Wizard
+### DC: Windows Server Setup Wizard
 
 Select Options as they appear:
   - Select the operating system you would like installed
@@ -146,7 +147,7 @@ Select Options as they appear:
 
         - (Easy password makes it easy for lab setup)
 
-# Configuring NIC's (Internal/External Networks)
+### Configuring NIC's (Internal/External Networks)
 
 Check Default NAT Network
   - In Arch termnial:
@@ -167,7 +168,7 @@ If this unfortunately does not work, try these commands:
 ***This is the INTERNET network!***
 
 
-# Create Internal Network (INTNET)
+### Create Internal Network (INTNET)
 
 Open virt-manager:
 
@@ -200,7 +201,7 @@ Configure:
   - `intnet` -> internal lab
 
 
-# Inside Your Windows Server VM
+### Inside Your Windows Server VM
 
 Now we will rename the Network Adapters
 
@@ -284,7 +285,7 @@ _INTNET_ -> 172.16.0.1
 ```
 This means it is working!
 
-# Configuring Active Directory Domain Services
+### Configuring Active Directory Domain Services
 
 Now that we have the configured NIC's, we can setup our Domain (Active Directory Domain Server).
 
@@ -320,7 +321,7 @@ This will open the Active Directory Services Configuration Window, you can choos
 
   - Click Next through the rest of the settings, click Install
 
-# Creating dedicated domain admin user account
+### Creating dedicated domain admin user account
 
 Open Active Directory Users and Computers.
 
@@ -370,9 +371,9 @@ Go ahead and sign out, then on the Sign-In screen, select Other Users, and enter
 
     - Password: Password1
 
-# Network Configuration
+### Network Configuration
 
-## Configure Remote Access Server (RAS)/NAT
+### Configure Remote Access Server (RAS)/NAT
 
 Now it is time to setup a RAS/NAT to allow our client virtual machines to be on a private virtual network,
 but we still want to be able to access the Internet through the DC.
@@ -417,7 +418,7 @@ the setup has been configured ***correctly!*** Now our client VMs should be able
 once we setep DCHP for them!
 
 
-# Configuring DCHP Server
+### Configuring DCHP Server
 
 Open Server Manager > select "Add roles and features".
 
@@ -459,7 +460,7 @@ Open Server Manager > select "Add roles and features".
 
     - A green symbol should appear next to IPv4 and IPv6 to show that DHCP is now properly configured!
 
-# How to enable internet access from this virtual machine
+### How to enable internet access from this virtual machine
 
  > **Note:**
  > In a real production environment, we do not want to allow the domain server to access the Internet.
@@ -472,7 +473,7 @@ Open Server Manager > select "Add roles and features".
 
     - Change the setting to Off for both Administrators and Users.
 
-# Automating User Account Creation with PowerShell
+### Automating User Account Creation with PowerShell
 
 Download the PowerShell script from the repository above and pasting the link into Internet Explorer.
 
@@ -623,9 +624,4 @@ There is only one final step in joining the Domain Controller, and that is:
 When the VM reaches the sign in screen, you can now choose the “Other user” option and sign-in with any of the user accounts that we created earlier. A new profile will be built whenever a new user signs in.
 
 
-
-
-
-
-**This is currently a work in progress..**
-
+~To add in conclusion later~
