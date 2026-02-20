@@ -674,4 +674,9 @@ Going forward, I plan to expand this lab by:
 
   - Monitoring authentication logs and failed login attempts
 
+  > **NOTE:**
+  > This will be done with Blake Faust, a learning Cyber Professional like myself. You can find his blog for his attack scenario while I will be doing detection practice.
+  > [Blake Faust](https://blake-faust.com/)
+  > ***This is currently a WIP...***
+
 Overall, this project strengthened both my technical understanding of Active Directory and my ability to design, deploy, and troubleshoot enterprise-style infrastructure in a controlled environment.
