@@ -116,14 +116,6 @@ This shows how even small numerical changed can be detected using Windows tools.
 
 The recovered image opened successfully (boat at a dock), which confirmed the extraction worked and the offsets were correct.
 
-### Screenshot Suggestions
-
-- HxD showing the `FFD8` hit and the start offset (`1E5`)
-- HxD showing the `FFD9` hit and the note about the end offset (`E948`)
-- Select block window showing start/end offsets
-- Recovered image opened in Photos (only if it’s safe to share)
-
-
 ## Conclusion
 
 This was my first type of Forensic Analysis I have done and it taught me a lot.
