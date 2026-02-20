@@ -5,7 +5,7 @@ date: 2026-02-18 14:00:00 -0800
 categories: [Homelab, Active Directory]
 tags: [Windows Server, AD, Cybersecurity]
 image:
-  path: "/assets/img/ad-banner.png"
+  path: "/assets/img/ad-banner.webp"
   alt: Active Directory Setup
 author: Tylor Romine
 ---
