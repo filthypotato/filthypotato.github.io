@@ -622,6 +622,8 @@ There is only one final step in joining the Domain Controller, and that is:
 
 When the VM reaches the sign in screen, you can now choose the “Other user” option and sign-in with any of the user accounts that we created earlier. A new profile will be built whenever a new user signs in.
 
+And then you're all done!! :D YUURRRR
+
 ## Issues Conclusion
 
 After publishing this lab, I noticed that the page was loading slower than expected. I ran a Cloudflare syntheic monitor and it showed me Largest Contentful Paint (LCP) was nearly 4 seconds.
