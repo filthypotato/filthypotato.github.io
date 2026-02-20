@@ -623,7 +623,7 @@ There is only one final step in joining the Domain Controller, and that is:
 
 When the VM reaches the sign in screen, you can now choose the “Other user” option and sign-in with any of the user accounts that we created earlier. A new profile will be built whenever a new user signs in.
 
-## Conclusion
+## Issues Conclusion
 
 After publishing this lab, I noticed that the page was loading slower than expected. I ran a Cloudflare syntheic monitor and it showed me Largest Contentful Paint (LCP) was nearly 4 seconds.
 
@@ -645,7 +645,7 @@ After deploying the optimized image and purging Cloudflare cache, LCP improved f
 This was a good reminder that large media assets can drastically impact web performance, even on static sites.
 
 
-## Conclusion
+## Lab Conclusion
 
 Building this Active Directory homelab gave me hands-on experience with core enterprise infrastructure concepts that are difficult to fully understand through theory alone.
 
