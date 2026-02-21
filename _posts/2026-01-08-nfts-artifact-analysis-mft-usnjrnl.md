@@ -1,7 +1,7 @@
 ---
 title: "NTFS Artifacts and Journal Analysis (HxD + Autopsy + Zimmerman Tools)"
 date: 2026-01-08 14:00:00 -0800
-categories: [Digital Forensics, NTFS]
+categories: [Digital Forensics, Labs]
 tags: [HxD, Autopsy, MFTECmd, Cybersecurity Timeline Explorer, NTFS, MFT, UsnJrnl]
 image:
   path: "/assets/img/ntfs-journal-analysis.png"
@@ -143,3 +143,6 @@ Autopsy performs keyword searches against indexed data and visible file system s
 This is why journal artifacts are critical in NTFS investigations.
 
 
+---
+
+*If it’s not broken, fix it til it is.*

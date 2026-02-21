@@ -125,3 +125,8 @@ This exercise reinforced how powerful low level analysis can be in a forensic in
 By identifying the JPEG header (`FF D8`) and footer (`FF D9`), calculating accurate offsets, and extracting the byte range manually, I was able to recover the embedded image successfully.
 
 This kind of manual file carving helps build a deeper understanding of how forensic tools automate recovery behind the scenes. Instead of relying entirely on software, working directly with offsets and hex values strengthens foundational DFIR skills.
+
+
+---
+
+*If it’s not broken, fix it til it is.*

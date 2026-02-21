@@ -59,3 +59,8 @@ In Autopsy, I analyzed the forensic image using the **Known Pseudo** and **Known
 - FTK Imager makes it simple to generate and export hash lists
 - WinHex is clutch when you need to go low-level and fix corrupted/shifted data
 - Once Autopsy is configured right, the analysis is way more streamlined
+
+
+---
+
+*If it’s not broken, fix it til it is.*

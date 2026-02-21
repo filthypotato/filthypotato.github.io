@@ -684,3 +684,8 @@ Going forward, I plan to expand this lab by:
   > ***This is currently a WIP...***
 
 Overall, this project strengthened both my technical understanding of Active Directory and my ability to design, deploy, and troubleshoot enterprise-style infrastructure in a controlled environment.
+
+
+---
+
+*If it’s not broken, fix it til it is.*
