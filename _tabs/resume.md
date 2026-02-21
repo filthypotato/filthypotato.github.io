@@ -11,7 +11,7 @@ order: 1
 
 ***Cybersecurity | IT Infrastructure | Validation Engineering***
 
-Website: https://tylor-romine.com
+[Website](https://tylor-romine.com/)
 
 [GitHub](https://github.com/filthypotato)
 
