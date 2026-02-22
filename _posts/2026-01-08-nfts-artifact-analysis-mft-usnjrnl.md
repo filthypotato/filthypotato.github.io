@@ -4,7 +4,7 @@ date: 2026-01-08 14:00:00 -0800
 categories: [Digital Forensics, Labs]
 tags: [HxD, Autopsy, MFTECmd, Cybersecurity Timeline Explorer, NTFS, MFT, UsnJrnl]
 image:
-  path: "/assets/img/ntfs-journal-analysis.png"
+  path: "/assets/img/ntfs-journal-analysis.webp"
   alt: NTFS journal and MFT forensic analysis
 ---
 
@@ -99,7 +99,7 @@ When I ran an exact keyword search in Autopsy for:
 
 It returned **no results** in the file system view.
 
-![Autopsy no results found](/assets/img/ntfs-journal-no-results.png)
+![Autopsy no results found](/assets/img/ntfs-journal-no-results.webp)
 
 At this point it would be easy to assume the file never existed or was fully removed. But NTFS doesn’t work that cleanly.
 

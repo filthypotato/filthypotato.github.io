@@ -4,7 +4,7 @@ date: 2026-01-15 12:00:00 -0800
 categories: [Digital Forensics, Labs]
 tags: [Windows Forensics, Command Line, Hash Comparison, Hex Editor, File Carving]
 image:
-  path: "/assets/img/hash-analysis-banner.png"
+  path: "/assets/img/hash-analysis-banner.webp"
   alt: Digital forensic command line and hex editor analysis
 ---
 

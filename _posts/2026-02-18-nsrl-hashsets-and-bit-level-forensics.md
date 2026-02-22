@@ -4,7 +4,7 @@ date: 2026-02-10 18:00:00 -0800
 categories: [Digital Forensics, Labs]
 tags: [Autopsy, FTK Imager, WinHex, OSFMount, NSRL, Hashing]
 image:
-  path: "/assets/img/known-pseudo-hashset.png"
+  path: "/assets/img/known-pseudo-hashset.webp"
   alt:  Known given pseudo hashset for lab
 ---
 
