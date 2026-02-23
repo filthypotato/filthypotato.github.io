@@ -69,7 +69,7 @@ This allows the VM manager to access it when configuring the virtual machine.
 
 Under:
 
-`VMs → Add VM → Ubuntu`
+`VMs > Add VM > Ubuntu`
 
 I configured:
 

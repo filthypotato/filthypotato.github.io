@@ -107,7 +107,7 @@ Click `Create a new virtual machine`
 
 - Select ISO Image for Windows Server 2025
 
-- Make sure on Chose the operating system you are installing -> `Microsoft Windows Server 2025` > Foward
+- Make sure on Chose the operating system you are installing > `Microsoft Windows Server 2025` > Foward
 
 - Click `yes` on the next window
 
@@ -175,7 +175,7 @@ If this unfortunately does not work, try these commands:
 
 Open virt-manager:
 
-  - Edit -> Connection Details
+  - Edit > Connection Details
 
   - Virtual Networks
 
@@ -199,9 +199,9 @@ Configure:
 
 **Now you should have:**
 
-  - `default` -> internet
+  - `default` > internet
 
-  - `intnet` -> internal lab
+  - `intnet` > internal lab
 
 
 ### Inside Your Windows Server VM
@@ -217,12 +217,12 @@ Now we will rename the Network Adapters
 
 You should see and rename:
 
-  - Ethernet -> _INTERNET_
+  - Ethernet > _INTERNET_
 
-  - Ethernet 2 -> _INTNET_
+  - Ethernet 2 > _INTNET_
 
-Right click the `_INTNET_` -> Properties
-Internet Protocol Version 4 -> Properties
+Right click the `_INTNET_` > Properties
+Internet Protocol Version 4 > Properties
 
 Set:
 
@@ -283,8 +283,8 @@ ipconfig
 You will see:
 
 ```nginx
-_INTERNET_ -> DHCP address 192.168.x.x (or close too)
-_INTNET_ -> 172.16.0.1
+_INTERNET_ > DHCP address 192.168.x.x (or close too)
+_INTNET_ > 172.16.0.1
 ```
 This means it is working!
 
@@ -292,7 +292,7 @@ This means it is working!
 
 Now that we have the configured NIC's, we can setup our Domain (Active Directory Domain Server).
 
-Open `Server Manager` -> select `Add role and features`
+Open `Server Manager` > select `Add role and features`
 
 Click next until you get to `Select destination server/Server Selection` tab.
 
@@ -526,7 +526,7 @@ Click `Create a new virtual machine`
 
 - Select ISO Image for Windows 10
 
-- Make sure on Chose the operating system you are installing -> `Microsoft Windows 10` > Foward
+- Make sure on Chose the operating system you are installing > `Microsoft Windows 10` > Foward
 
 - Click `yes` on the next window
 
