@@ -66,7 +66,7 @@ First, update the system:
 
 Then install Wazuh:
 
-    curl -sO https://packages.wazuh.com/4.12/wazuh-install.sh
+    curl -sO https://packages.wazuh.com/4.14/wazuh-install.sh
     sudo bash ./wazuh-install.sh -a
 
 ---
@@ -152,7 +152,9 @@ Restart services:
     sudo systemctl restart wazuh-manager
     sudo systemctl restart wazuh-dashboard
 
-After that, the dashboard loaded.
+After that, the dashboard should load fine!
+
+For me, I had more trouble which I include below.
 
 ---
 
@@ -167,6 +169,8 @@ If using Tailscale, make sure you use the Pi’s Tailscale IP.
 
 Using the wrong interface caused connection failures earlier. So I'm guessing I didn't have to confirm and verify everything before, but it never hurts right?
 
+Since I am using Tailscale I was using the wrong IP to access the web dashboard. Silly me.
+
 ---
 
 # Installing the Windows Agent (Domain Controller)
@@ -174,6 +178,8 @@ Using the wrong interface caused connection failures earlier. So I'm guessing I 
 If you need the full Domain Controller setup first, follow my complete guide here:
 
 [Building an Active Directory Homelab](/posts/building-active-directory-homelab/)
+
+If not, you can use any other Windows VM of your choice if you decide to follow along yourself!
 
 From the dashboard:
 
@@ -183,7 +189,7 @@ On the Domain Controller (run as Administrator):
 
     msiexec.exe /i wazuh-agent.msi /q WAZUH_MANAGER="100.xxx.xxx.xxx"
 
-If you're using Tailscale, use the Pi’s Tailscale IP — not the LAN IP.
+I'm using Tailscale so I had to use that IP, not the LAN IP.
 
 Start the service:
 
@@ -197,18 +203,18 @@ The Wazuh service started successfully and immediately began connecting to the m
 
 # Verifying the Agent Connection
 
-Check the agent log:
+To verify the Agent is working I ran:
 
     Get-Content "C:\Program Files (x86)\ossec-agent\ossec.log" -Tail 20
 
-You should see it connect on port 1514.
+Now I could see it connect on port 1514.
 
-In the dashboard:
+Now in the dashboard:
 
 Agents > Explore Agent
 Status: Active
 
-Alerts begin populating under Threat Hunting.
+Alerts started to populate under Threat Hunting.
 
 ![Wazuh Agent Active Status](/assets/img/wazuh-agent-active.webp)
 
@@ -240,7 +246,7 @@ Once the agent was online, alerts immediately began populating in Threat Hunting
 
 # Why This Lab Feels Different
 
-Before this, I was just launching tools.
+Before this, I was just launching tools. I never got the chance to see what it would look like on the Blue side of things.
 
 Now I have:
 
@@ -253,13 +259,14 @@ This is the first time my homelab feels like a real SOC base instead of random e
 
 ![Wazuh Overview Dashboard](/assets/img/wazuh-overview.webp)
 
-The full dashboard gives visibility across configuration assessment, FIM, threat hunting, and vulnerability detection.
+This full ***Wazuh*** dashboard gives visibility across configuration assessment, FIM, threat hunting, and vulnerability detection.
 
 ---
 
-# Next Steps
+# Next Post:
 
-- Add agents to more systems
-- Generate test alerts
-- Simulate attacks
-- Start learning detection engineering properly
+I found out that there was more to add in order to get full logs in one place. I decided to go with Sysmon for better telemetry.
+
+View the blog post here below! March 15, 2026 Release:
+
+[Enhancing Wazuh w/ Sysmon](/posts/enhancing-wazuh-telemetry-with-sysmon-on-windows-server/)

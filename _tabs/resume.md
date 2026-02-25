@@ -99,11 +99,29 @@ Army Commendation Medal (ARCOM)
 
 ---
 
-## Projects
+## Certifications
+
+### Python Developer Certification
+
+[Certificate](/assets/imgs/files/certification_filthypotato_python.pdf)
+
+**freeCodeCamp** | February 2026
+
+- Completed ~300 hours of Python coursework and projects
+- Covered data structures, algorithms, object-oriented programming, and automation
+- Built real-world applications and problem-solving scripts
+
+
+
+## Personal Projects
 
   - Active Directory Homelab (Windows Server + Windows Client Simulation)
 
   - VMware Attack Lab (Windows 11 + Ubuntu vulnerable servers)
+
+  - Unraid Server Deployment with Plex Hosting
+
+  - Samba Share Configuration on Unraid
 
   - Metasploitable2 Penetration Testing Lab
 
@@ -116,10 +134,6 @@ Army Commendation Medal (ARCOM)
   - Encrypted Messaging Application
 
   - Weather Forecast Application
-
-  - Unraid Server Deployment with Plex Hosting
-
-  - Samba Share Configuration on Unraid
 
 ---
 
