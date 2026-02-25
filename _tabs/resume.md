@@ -103,7 +103,7 @@ Army Commendation Medal (ARCOM)
 
 ### Python Developer Certification
 
-[Certificate](/assets/imgs/files/certification_Tylor_Romine_python.pdf)
+[Certificate](/assets/img/files/certification_Tylor_Romine_python.pdf)
 
 **freeCodeCamp** | February 2026
 
