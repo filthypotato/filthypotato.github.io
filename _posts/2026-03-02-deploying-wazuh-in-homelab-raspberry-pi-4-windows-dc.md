@@ -263,10 +263,17 @@ This full ***Wazuh*** dashboard gives visibility across configuration assessment
 
 ---
 
+
 # Next Post:
+
+Adding Sysmon to my windows DC server and agents will allow me to track all logs in one place! Next post soon!
+
+<!--
 
 I found out that there was more to add in order to get full logs in one place. I decided to go with Sysmon for better telemetry.
 
 View the blog post here below! March 15, 2026 Release:
 
-[Enhancing Wazuh w/ Sysmon](/posts/enhancing-wazuh-telemetry-with-sysmon-on-windows-server)
+[Enhancing Wazuh w/ Sysmon](/posts/enhancing-wazuh-telemetry-with-sysmon-on-windows-server/)
+
+-->
