@@ -1,6 +1,6 @@
 ---
 title: "Deploying Wazuh in My Homelab (Raspberry Pi + Windows DC)"
-date: 2026-03-02 10:00:00 -0800
+date: 2026-02-25 10:00:00 -0800
 categories: [Homelab, Blue Team, SIEM]
 tags: [Wazuh, Raspberry-Pi, Windows Server, Domain Controller, Tailscale]
 image:

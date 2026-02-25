@@ -19,6 +19,10 @@ While you get security logs and authentication attempts, you miss deeper process
 
 ## Why Sysmon?
 
+Here is the link to the documentation that I followed to get this set up.
+
+[Wazuh Documentation](https://documentation.wazuh.com/current/index.html)
+
 Windows native logging is fine, but Sysmon provides the kind of telemetry that makes a SIEM actually useful:
 
 - **Process creation** with full command-line logging

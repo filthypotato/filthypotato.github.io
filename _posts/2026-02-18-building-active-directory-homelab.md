@@ -565,7 +565,7 @@ Click `Create a new virtual machine`
   - Finish
 
 ***Now boot the VM**
-You will need to press enter when it says boot from CD or DVD....
+You may need to press enter when it says boot from CD or DVD....
   - Use arrow keys.
     - Choose QEMU DVD-ROM
       - Press Enter again
@@ -588,13 +588,19 @@ Continuing through the Windows Setup wizard, these are the options you should se
 
     - Click next to the following screen to select the default partition.
 
-  - Windows will reboot - Continue through until you get to the steps below
-
   - Let’s connect you to a network
 
     - “I don’t have internet”
 
     - Continue with limited setup
+
+  - Windows will reboot
+
+  - Choose `Setup for personal use:`
+
+  - Then choose `Offline account` in bottom left corner.
+
+  - `Limited Experience` bottom left Corner
 
   - Who’s going to use this PC?
 
