@@ -22,7 +22,7 @@ So I deployed:
 - Windows Server 2025 (Domain Controller) as an agent
 - Tailscale for secure remote access
 
-This is what actually worked — including the parts that almost broke me.
+This is what actually worked - including the parts that almost broke me.
 
 ---
 
@@ -39,9 +39,9 @@ This is what actually worked — including the parts that almost broke me.
 
 # Ports Used
 
-- 1514/tcp – Agent communication
-- 1515/tcp – Agent enrollment
-- 443/tcp – Dashboard access
+- 1514/tcp - Agent communication
+- 1515/tcp - Agent enrollment
+- 443/tcp - Dashboard access
 
 # The First Attempt (Ubuntu 24.04)
 
