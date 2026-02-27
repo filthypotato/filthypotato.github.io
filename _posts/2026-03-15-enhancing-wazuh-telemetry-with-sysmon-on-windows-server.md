@@ -13,7 +13,7 @@ image:
 
 Wazuh pulls a lot of data from Windows Event Viewer by default. But after digging through the logs, I realized it's not rich enough for the level of visibility I want.
 
-While you get security logs and authentication attempts, you miss deeper process visibility — command lines, parent-child process relationships, hashes, and detailed execution telemetry. To give Wazuh more “eyes and ears,” I decided to install **Sysmon**.
+While you get security logs and authentication attempts, you miss deeper process visibility - command lines, parent-child process relationships, hashes, and detailed execution telemetry. To give Wazuh more “eyes and ears,” I decided to install **Sysmon**.
 
 ---
 
@@ -32,7 +32,7 @@ Windows native logging is fine, but Sysmon provides the kind of telemetry that m
 - **Hashes** (depending on configuration)
 - **Detailed operational visibility**
 
-This is the type of logging that turns basic monitoring into actual detection engineering.
+This is the type of logging that got me hands on what it really looks like when attacks come in.
 
 ---
 
@@ -280,6 +280,25 @@ You should see your custom rule fire!
 You can make all kinds of rules using these steps! It's pretty sweet the amount of tools we have access to for logging types of activity.
 
 ---
+
+## Lessons Learned
+
+Installing Sysmon completely changed how I view Windows logging.
+
+Before this, I thought Wazuh was “good enough” out of the box. But once Sysmon was feeding process creation events with command-line arguments and parent-child relationships, the difference was obvious. The logs went from basic authentication noise to actual behavioral telemetry.
+
+A few things stood out during this build:
+
+- Running PowerShell as Administrator matters (learned that the hard way)
+- The `if_sid` field is critical, if you hook into the wrong event ID, nothing fires
+- Restarting the Wazuh manager is required for rule changes (forget that a few times)
+- Small test cases like `cipher.exe` are perfect for validating detection logic
+- Visibility > assumptions
+
+I also realized how important it is to understand what “normal” looks like in your environment. `cipher.exe` might be rare in a normal user workflow, which makes it a strong detection candidate. But in some environments, it might not be suspicious at all. Context matters.
+
+---
+
 
 
 

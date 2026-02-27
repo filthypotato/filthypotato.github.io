@@ -59,12 +59,12 @@ Lesson learned: the newest is NOT always the best. OS versions don’t always pl
 
 # Installing Wazuh on the Pi
 
-First, update the system:
+First, I updated the system:
 
     sudo apt update
     sudo apt upgrade -y
 
-Then install Wazuh:
+Then installed Wazuh:
 
     curl -sO https://packages.wazuh.com/4.14/wazuh-install.sh
     sudo bash ./wazuh-install.sh -a
@@ -80,17 +80,16 @@ At the end of the installation, Wazuh prints the dashboard credentials:
     Password: <randomly-generated-password>
     Installation finished.
 
-Save this password immediately.
+I had to save this password immediately as it only shows once.
 
-Log in at:
+I logged in at:
 
-    https://<your-pi-ip>
+    https://<my-pi-ip>
 
-Use:
 - Username: admin
 - Password: (generated during install)
 
-After logging in, change the password.
+After logging in, I changed the password to something easier to remember but still strong.
 
 ---
 
@@ -104,7 +103,7 @@ Here’s what I had to check.
 
     sudo systemctl status wazuh-manager
 
-Confirm services started:
+Confirmed services started:
 - wazuh-analysisd
 - wazuh-remoted
 - wazuh-logcollector
@@ -160,12 +159,12 @@ For me, I had more trouble which I include below.
 
 # Accessing the Dashboard
 
-Use either:
+It was use either:
 
 - https://192.168.x.x (LAN)
 - https://100.x.x.x (Tailscale)
 
-If using Tailscale, make sure you use the Pi’s Tailscale IP.
+If using Tailscale, make sure you use the Pi’s Tailscale IP as thats where I messed up. It was a long day :)
 
 Using the wrong interface caused connection failures earlier. So I'm guessing I didn't have to confirm and verify everything before, but it never hurts right?
 
@@ -175,23 +174,21 @@ Since I am using Tailscale I was using the wrong IP to access the web dashboard.
 
 # Installing the Windows Agent (Domain Controller)
 
-If you need the full Domain Controller setup first, follow my complete guide here:
+I made a full Domain Controller setup here which I will be using in this setup:
 
 [Building an Active Directory Homelab](/posts/building-active-directory-homelab/)
-
-If not, you can use any other Windows VM of your choice if you decide to follow along yourself!
 
 From the dashboard:
 
 Endpoints > Deploy new agent > Windows
 
-On the Domain Controller (run as Administrator):
+On the Domain Controller I ran powershell as Administrator.
 
     msiexec.exe /i wazuh-agent.msi /q WAZUH_MANAGER="100.xxx.xxx.xxx"
 
 I'm using Tailscale so I had to use that IP, not the LAN IP.
 
-Start the service:
+Started the service:
 
     NET START WazuhSvc
 
@@ -263,10 +260,14 @@ This full ***Wazuh*** dashboard gives visibility across configuration assessment
 
 ---
 
+# Lessons Learned & Takeaways
+
+One of the biggest thing I learned from this build is that the biggest problems are usually a small configuration issue. I did not expect for Ubuntu 24.04 to break the install, since I had already seen other blogs about it working with T-Pot. The dashboard not loading was a silly mistake since I was using the wrong IP because I was using Tailscale for better network segmentation. Wazuh didn't magically see everything, which taught me a valuable lesson. After installing the agents on my Domain controller and watching real authentication logs populate in real time changed how I look at my lab. I have always had random spun up VMs but now I actually have visibility. This made the setup completely worth it.
+
 
 # Next Post:
 
-Adding Sysmon to my windows DC server and agents will allow me to track all logs in one place! Next post soon!
+Adding Sysmon to my Windows DC server and agents will allow me to track all logs in one place! Next post soon!
 
 <!--
 

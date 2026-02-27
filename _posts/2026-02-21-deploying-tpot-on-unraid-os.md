@@ -171,7 +171,7 @@ cd tpotce
 sudo ./install.sh
 ```
 
-When the installation finishes successfully, you should see something similar to:
+When the installation finishes successfully, this was displayed:
 
 ```
 PLAY RECAP
@@ -195,7 +195,7 @@ This confirms:
 
 ## Choosing the T-Pot Installation Type
 
-After installation completes, you’ll be prompted to choose the T-Pot type:
+After installation completes, I was prompted to choose the T-Pot type:
 
 ```
 (H)ive
@@ -206,7 +206,7 @@ After installation completes, you’ll be prompted to choose the T-Pot type:
 (T)arpit
 ```
 
-For a full homelab deployment with dashboards, logging, and visualization tools, choose:
+I wanted a full homelab deployment with dashboards, logging, and visualization tools, so I choose:
 
 ```
 h
@@ -224,7 +224,7 @@ Hive installs:
 
   - Centralized logging
 
-This is the recommended option for a standalone lab environment.
+This was the recommended option for a standalone lab environment.
 
 ### How to Access Web GUI
 
@@ -241,7 +241,7 @@ After selecting Hive, the installer will:
 You’ll access the dashboard at:
 
 ```
-https://<your-server-ip>:64297
+https://<my-server-ip>:64297
 ```
 
 ---
@@ -297,17 +297,19 @@ Given how aggressively honeypots get scanned once exposed, isolation is critical
 
 ---
 
-## Lessons Learned
+## Lessons Learned & Takeaways
 
-  1. Always verify VM Manager settings in Unraid.
+Honestly I did not expect Unraid to complain that much for building a VM. That "Disable Autostart/Start option" really through me through a loop which kept blocking my VM and wasted time thinking it was my Ubuntu image. But it wasn't, just Unraid protecting me from myself ha.
 
-  2. Use Ubuntu Server, not Desktop.
+The disk bus also got me good. When Ubuntu first said it could not detect the disk I thought something was corrupted. Switching to SATA fixed the issue immediately! Using the wrong config will give errors so you have to make sure you are selecting the correct options.
 
-  3. If disks are not detected, check disk bus type.
+Then I forgot about having to remove the ISO after the Ubuntu install, one of those basic work flows that shouldn't be forgotten.
 
-  4. Always remove the ISO after installation.
+The biggest takeaway was learning that isolation is everything. T-Pot binded a lot of ports and runs full stack services. I'm super glad I decided not to install it on my Unraid host but instead instad of a VM. This allowed me to have more control, roll back options, and a peace of mind!
 
-  5. Keep honeypots isolated from production or storage systems.
+I did not expect to see any attacks as I did not expose it publicly. That was really wild to see.
+
+Overall, this was one of those builds that I didn't follow a full tutorial for. I followed documnentation. I actually understood what was happening under the hood.
 
 ---
 
