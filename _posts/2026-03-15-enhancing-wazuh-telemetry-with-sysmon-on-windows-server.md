@@ -68,23 +68,23 @@ Then I downloaded a pre-defined configuration file provided by the Wazuh team to
 wget https://wazuh.com/resources/blog/emulation-of-attack-techniques-and-detection-with-wazuh/sysmonconfig.xml -OutFile sysmonconfig.xml
 ```
 
-Verify the file downloaded successfully:
+I verified the file downloaded successfully:
 
 ```powershell
 ls
 ```
 
-Make sure `sysmonconfig.xml` appears in the directory.
+To make sure `sysmonconfig.xml` appeared in the directory. Which is did!
 
 ---
 
 ## Installing Sysmon
 
-Now we install Sysmon with the configuration file.
+Then I installed Sysmon with the configuration file.
 
-> Important: Open PowerShell or Command Prompt **as Administrator**.
+> Important: Open PowerShell or Command Prompt **as Administrator**. I may have forgot...
 
-Then run:
+Then I ran:
 
 ```powershell
 .\Sysmon64.exe -accepteula -i .\sysmonconfig.xml
@@ -103,7 +103,7 @@ Installation completed successfully.
 
 ## Verifying Sysmon is Running
 
-After installation, confirm Sysmon is active by checking:
+After installation,  I confirmed Sysmon is active by checking:
 
 **Event Viewer > Applications and Services Logs > Microsoft > Windows > Sysmon > Operational**
 
@@ -113,11 +113,11 @@ If logs are populating, Sysmon is running correctly and feeding enhanced telemet
 
 ## Sidebar: Expanding Windows Telemetry Awareness
 
-In your browser, visit:
-
-[LOLBAS](https://lolbas-project.github.io/)
+I found out about this website that made it easier to make rules for Sysmon.
 
 **LOLBAS (Living Off The Land Binaries, Scripts and Libraries)** is a resource listing legitimate Windows binaries that threat actors commonly abuse.
+
+[LOLBAS](https://lolbas-project.github.io/)
 
 This is important because many attacks use *native Windows tools* instead of malware.
 
@@ -131,15 +131,15 @@ That makes it a strong candidate for monitoring.
 
 ## Method 1: Creating Custom Detection Rules in Wazuh
 
-Now we move to the Wazuh Manager running on the Raspberry Pi.
+I moved over to the Wazuh Manager running on the Raspberry Pi.
 
-SSH into your manager and navigate to:
+SSH'd into the manager and navigated to:
 
 ```
 cd /var/ossec/etc/rules
 ```
 
-Now create a cipher_rule.xml file:
+Then I created a cipher_rule.xml file:
 
 ```
 sudo nano cipher_rule.xml
