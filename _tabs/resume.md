@@ -113,49 +113,64 @@ Army Commendation Medal (ARCOM)
 
 
 
-## Personal Projects
+## Cybersecurity Homelab & Technical Projects
 
-  - Active Directory Homelab (Windows Server + Windows Client Simulation)
+### Active Directory Enterprise Lab (Windows Server 2025 + Windows 11)
 
-  - VMware Attack Lab (Windows 11 + Ubuntu vulnerable servers)
+- Built domain environment with domain controller, DNS, Group Policy, and user management
+- Deployed Windows clients and simulated enterprise login/authentication workflows
+- Configured network segmentation and internal DNS resolution
+- Practiced account lockout policies, log auditing, and event monitoring
 
-  - Unraid Server Deployment with Plex Hosting
+---
 
-  - Samba Share Configuration on Unraid
+### Attack & Defense Lab (Windows + Linux Targets)
 
-  - Metasploitable2 Penetration Testing Lab
+- Deployed vulnerable machines (Metasploitable2, Ubuntu test servers)
+- Conducted vulnerability scans using Nmap
+- Exploited services using Metasploit framework
+- Documented findings and remediation strategies
 
-  - SSD Validation Testing with Pytest
+---
 
-  - Python and C++ CLI Projects
+### Unraid Server Deployment & Network Services
 
-  - HTML/CSS Cookbook Website
+- Configured Unraid server with Docker containers and network shares
+- Deployed Plex media server and Samba file sharing
+- Managed storage pools and drive health monitoring
 
-  - Encrypted Messaging Application
+---
 
-  - Weather Forecast Application
+### SSD Validation Automation (Python + Pytest)
+
+- Developed test scripts to automate SSD validation workflows
+- Simulated power state testing and failure scenarios
+- Logged and analyzed test results for firmware stability
 
 ---
 
 ## Technical Skills
 
-**Operating Systems:**
-Windows 10, Windows 11, Linux
+**Operating Systems & Administration:**
+Windows 10/11, Windows Server, Linux (Ubuntu), Active Directory, Group Policy, DNS configuration, System deployment and imaging
 
-**Networking:**
-LAN/WAN Setup and Troubleshooting
+**Networking & Infrastructure:**
+LAN/WAN configuration, TCP/IP fundamentals, Network segmentation, DNS resolution, Samba file sharing, Router and firewall configuration
 
-**Programming:**
-Python, C++, HTML, CSS
+**Cybersecurity & Offensive Tools:**
+Nmap (network scanning & enumeration), Metasploit (exploitation), Burp Suite (web testing), msfconsole, Vulnerability assessment, Log analysis
 
-**Security Tools:**
-Burp Suite, Nmap, msfconsole
+**Detection & Monitoring:**
+Windows Event Logs, Sysmon telemetry, Security log auditing, Alert validation, Threat simulation, SIEM
 
-**Testing & Validation:**
-Pytest, SSD Validation, Firmware Testing
+**Programming & Automation:**
+Python (automation, scripting, Pytest), C++, CLI application development, Basic SQL, HTML/CSS
 
-**Other:**
-SQL Server, TryHackMe Labs, System Deployment, BIOS Configuration
+**Hardware Validation & Testing:**
+SSD validation (S3/S4/S5 power states), Firmware testing, BIOS configuration, Boot diagnostics, System stability testing
+
+**Virtualization & Lab Environments:**
+VMware, VirtualBox, Windows/Linux lab deployment, Vulnerable machine simulation (Metasploitable2)
 
 ---
 
