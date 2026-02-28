@@ -8,7 +8,7 @@ image:
   alt: Wazuh authentication activity on my Domain Controller.
 ---
 
-# Deploying Wazuh in My Homelab (Raspberry Pi + Windows DC)
+## Deploying Wazuh in My Homelab (Raspberry Pi + Windows DC)
 
 I had never worked with a SIEM before, so instead of just reading about one, I decided to build it myself.
 
@@ -26,7 +26,7 @@ This is what actually worked - including the parts that almost broke me.
 
 ---
 
-# Lab Environment
+## Lab Environment
 
 - Raspberry Pi 4 (8GB)
 - Ubuntu Server 22.04 LTS
@@ -37,13 +37,13 @@ This is what actually worked - including the parts that almost broke me.
 
 ---
 
-# Ports Used
+## Ports Used
 
 - 1514/tcp - Agent communication
 - 1515/tcp - Agent enrollment
 - 443/tcp - Dashboard access
 
-# The First Attempt (Ubuntu 24.04)
+## The First Attempt (Ubuntu 24.04)
 
 I originally installed Ubuntu Server 24.04.
 
@@ -57,7 +57,7 @@ Lesson learned: the newest is NOT always the best. OS versions don’t always pl
 
 ---
 
-# Installing Wazuh on the Pi
+## Installing Wazuh on the Pi
 
 First, I updated the system:
 
@@ -71,7 +71,7 @@ Then installed Wazuh:
 
 ---
 
-# Important: Default Web UI Credentials
+## Important: Default Web UI Credentials
 
 At the end of the installation, Wazuh prints the dashboard credentials:
 
@@ -93,13 +93,13 @@ After logging in, I changed the password to something easier to remember but sti
 
 ---
 
-# Dashboard Wouldn’t Load (Service-Level Debugging)
+## Dashboard Wouldn’t Load (Service-Level Debugging)
 
 After installation, the dashboard didn’t load at first.
 
 Here’s what I had to check.
 
-## 1. Verify Wazuh Manager Is Running
+### 1. Verify Wazuh Manager Is Running
 
     sudo systemctl status wazuh-manager
 
@@ -113,7 +113,7 @@ If the manager isn’t fully running, nothing works.
 
 ---
 
-## 2. Confirm wazuh-authd Is Enabled
+### 2. Confirm wazuh-authd Is Enabled
 
 In:
 
@@ -128,7 +128,7 @@ Make sure:
 
 ---
 
-## 3. Fix Dashboard Binding + SSL
+### 3. Fix Dashboard Binding + SSL
 
 In:
 
@@ -157,7 +157,7 @@ For me, I had more trouble which I include below.
 
 ---
 
-# Accessing the Dashboard
+## Accessing the Dashboard
 
 It was use either:
 
@@ -172,7 +172,7 @@ Since I am using Tailscale I was using the wrong IP to access the web dashboard.
 
 ---
 
-# Installing the Windows Agent (Domain Controller)
+## Installing the Windows Agent (Domain Controller)
 
 I made a full Domain Controller setup here which I will be using in this setup:
 
@@ -198,7 +198,7 @@ The Wazuh service started successfully and immediately began connecting to the m
 
 ---
 
-# Verifying the Agent Connection
+## Verifying the Agent Connection
 
 To verify the Agent is working I ran:
 
@@ -219,7 +219,7 @@ The agent shows as Active and connected to the manager.
 
 ---
 
-# What Wazuh Is Actually Monitoring
+## What Wazuh Is Actually Monitoring
 
 Wazuh does not automatically monitor your entire network.
 
@@ -241,7 +241,7 @@ Once the agent was online, alerts immediately began populating in Threat Hunting
 
 ---
 
-# Why This Lab Feels Different
+## Why This Lab Feels Different
 
 Before this, I was just launching tools. I never got the chance to see what it would look like on the Blue side of things.
 
@@ -260,21 +260,21 @@ This full ***Wazuh*** dashboard gives visibility across configuration assessment
 
 ---
 
-# Lessons Learned & Takeaways
+## Lessons Learned & Takeaways
 
-One of the biggest thing I learned from this build is that the biggest problems are usually a small configuration issue. I did not expect for Ubuntu 24.04 to break the install, since I had already seen other blogs about it working with T-Pot. The dashboard not loading was a silly mistake since I was using the wrong IP because I was using Tailscale for better network segmentation. Wazuh didn't magically see everything, which taught me a valuable lesson. After installing the agents on my Domain controller and watching real authentication logs populate in real time changed how I look at my lab. I have always had random spun up VMs but now I actually have visibility. This made the setup completely worth it.
+One of the biggest thing I learned from this build is that the biggest problems are usually a small configuration issue. I did not expect for Ubuntu 24.04 to break the install, since I had already seen other blogs about it working with T-Pot.
+
+The dashboard not loading was a silly mistake since I was using the wrong IP because I was using Tailscale for better network segmentation. Wazuh didn't magically see everything, which taught me a valuable lesson.
+
+After installing the agents on my Domain controller and watching real authentication logs populate in real time changed how I look at my lab. I have always had random spun up VMs but now I actually have visibility. This made the setup completely worth it.
 
 
-# Next Post:
-
-Adding Sysmon to my Windows DC server and agents will allow me to track all logs in one place! Next post soon!
-
-<!--
+## Next Post:
 
 I found out that there was more to add in order to get full logs in one place. I decided to go with Sysmon for better telemetry.
 
-View the blog post here below! March 15, 2026 Release:
+View the blog post here below!
 
 [Enhancing Wazuh w/ Sysmon](/posts/enhancing-wazuh-telemetry-with-sysmon-on-windows-server/)
 
--->
+

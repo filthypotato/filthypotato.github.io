@@ -1,6 +1,6 @@
 ---
 title: "Enhancing Wazuh Telemetry with Sysmon on Windows Server"
-date: 2026-03-15 10:00:00 -0800
+date: 2026-02-28 10:00:00 -0800
 categories: [Homelab, Blue Team, Detection Engineering]
 tags: [wazuh, sysmon, windows-server, telemetry, soc, logging]
 image:
@@ -285,7 +285,9 @@ You can make all kinds of rules using these steps! It's pretty sweet the amount 
 
 Installing Sysmon completely changed how I view Windows logging.
 
-Before this, I thought Wazuh was “good enough” out of the box. But once Sysmon was feeding process creation events with command-line arguments and parent-child relationships, the difference was obvious. The logs went from basic authentication noise to actual behavioral telemetry.
+Before this, I thought Wazuh was “good enough” out of the box. But once Sysmon was feeding process creation events with command-line arguments and parent-child relationships, the difference was obvious.
+
+The logs went from basic authentication noise to actual behavioral telemetry.
 
 A few things stood out during this build:
 
@@ -295,7 +297,9 @@ A few things stood out during this build:
 - Small test cases like `cipher.exe` are perfect for validating detection logic
 - Visibility > assumptions
 
-I also realized how important it is to understand what “normal” looks like in your environment. `cipher.exe` might be rare in a normal user workflow, which makes it a strong detection candidate. But in some environments, it might not be suspicious at all. Context matters.
+I also realized how important it is to understand what “normal” looks like in your environment. `cipher.exe` might be rare in a normal user workflow, which makes it a strong detection candidate.
+
+But in some environments, it might not be suspicious at all. Context matters.
 
 ---
 
