@@ -2,7 +2,7 @@
 title: "Enhancing Wazuh Telemetry with Sysmon on Windows Server"
 date: 2026-02-28 10:00:00 -0800
 categories: [Homelab, Blue Team, Detection Engineering]
-tags: [wazuh, sysmon, windows-server, telemetry, soc, logging]
+tags: [Wazuh, Sysmon, Windows Server, Telemetry, SOC, Logging]
 image:
   path: /assets/img/wazuh-standard-featured-picture.webp
   alt: Wazuh Featured Photo
@@ -302,6 +302,8 @@ I also realized how important it is to understand what “normal” looks like i
 But in some environments, it might not be suspicious at all. Context matters.
 
 ---
+
+*If it’s not broken, fix it til it is.*
 
 
 

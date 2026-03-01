@@ -326,3 +326,7 @@ Overall, this was one of those builds that I didn't follow a full tutorial for. 
   - VM isolated from other lab services
 
 Next step will be configuring network exposure with tailscale and letting a friend attack the VM. While I will be monitoring inbound traffic.
+
+---
+
+*If it’s not broken, fix it til it is.*

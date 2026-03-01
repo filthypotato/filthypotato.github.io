@@ -2,7 +2,7 @@
 title: "Deploying Wazuh in My Homelab (Raspberry Pi + Windows DC)"
 date: 2026-02-25 10:00:00 -0800
 categories: [Homelab, Blue Team, SIEM]
-tags: [Wazuh, Raspberry-Pi, Windows Server, Domain Controller, Tailscale]
+tags: [Raspberry-Pi, Windows Server, Domain Controller, Tailscale]
 image:
   path: /assets/img/wazuh-auth-simulation-dashboard.webp
   alt: Wazuh authentication activity on my Domain Controller.
@@ -277,4 +277,7 @@ View the blog post here below!
 
 [Enhancing Wazuh w/ Sysmon](/posts/enhancing-wazuh-telemetry-with-sysmon-on-windows-server/)
 
+---
+
+*If it’s not broken, fix it til it is.*
 
