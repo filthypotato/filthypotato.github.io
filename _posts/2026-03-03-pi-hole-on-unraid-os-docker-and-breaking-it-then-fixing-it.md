@@ -23,7 +23,7 @@ Here’s what actually happened and how I fixed it.
 
 This is the hardware powering this setup:
 
-- **Router:** GL.iNet GL-AXT1800 (Flint)
+- **Router:** GL.iNet GL-AXT1800 (Slate AX)
 - **Server:** Intel NUC (11th Gen i5)
 - **Host OS:** Unraid OS
 - **Pi-hole:** Docker container running on Unraid

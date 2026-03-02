@@ -107,7 +107,7 @@ After installation,  I confirmed Sysmon is active by checking:
 
 **Event Viewer > Applications and Services Logs > Microsoft > Windows > Sysmon > Operational**
 
-If logs are populating, Sysmon is running correctly and feeding enhanced telemetry into Windows Event Logs — which Wazuh will now ingest.
+If logs are populating, Sysmon is running correctly and feeding enhanced telemetry into Windows Event Logs which Wazuh will now ingest.
 
 ---
 
@@ -208,7 +208,7 @@ From here you can:
 
 This makes rule management much easier, especially in lab environments when you need a quick edit since you can restart the node afterwards without using the CLI.
 
-If you click on `local_rules.xml`, you can edit it or create rules the same way we did via SSH — just through the web interface instead.
+If you click on `local_rules.xml`, you can edit it or create rules the same way we did via SSH, just through the web interface instead.
 
 ---
 
