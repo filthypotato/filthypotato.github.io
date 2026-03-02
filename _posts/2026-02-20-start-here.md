@@ -10,7 +10,7 @@ pin: true
 
 I got tired of just watching tutorials thinking I was learning.
 
-For a while, I was doing what most people do: watching videos, following walkthroughs, reading guides. I was learning, but it didn’t feel real. I wasn’t breaking anything. I wasn’t troubleshooting. I wasn’t building from scratch.
+I wanted hands-on, friction, and failure to happen that way I could learn by fixing.
 
 So I decided to stop consuming and start building.
 
@@ -48,15 +48,15 @@ Everything here is hands-on.
 
 This blog documents my current labs and many more to come:
 
-  - Active Directory lab build
+  - Active Directory builds
+
+  - Detection engineering experiments
 
   - Digital forensics case studies
 
-  - NTFS and disk artifact analysis
+  - DNS failures and fixes
 
-  - Hash comparisons and file carving
-
-  - Lessons learned while troubleshooting real configurations
+  - Telemetry breakdowns
 
 If it’s posted here, it was built, tested, or analyzed by me.
 
