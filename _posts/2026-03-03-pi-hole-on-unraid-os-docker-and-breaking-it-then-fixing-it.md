@@ -1,6 +1,6 @@
 ---
 title: "Installing Pi-hole on Unraid (br0 + Static IP) - And Breaking My Network (Before Fixing It)"
-date: 2026-03-03 07:30:00 -0800
+date: 2026-03-02 12:00:00 -0800
 categories: [Homelab, Networking, DNS]
 tags: [Pihole, Unraid, Docker, DNS, GLiNet, Homelab]
 image:
