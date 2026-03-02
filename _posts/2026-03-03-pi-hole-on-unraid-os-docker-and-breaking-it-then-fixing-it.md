@@ -95,10 +95,15 @@ And instantly… Nothing loaded.
 No websites.
 No updates.
 No DNS resolution at all.
+Discord disconnect.
 
-Discord crashed.
+I didn't just break the internet, I erased it. So I thought..
 
-I basically blackholed my own network.
+My network was still powered on, I could only access my servers directly through the IPs.
+
+But without the proper DNS tunneling, I created a ghost town.
+
+So after 3 years of trying to get Pi-hole working properly, I finally figured it out. Below is where the funny happens and was the long mistake this whole time.
 
 ---
 
@@ -112,7 +117,7 @@ Nope.
 
 Dashboard still accessible locally.
 
-So I SSH’d into a machine and ran:
+So I SSH’d into my Pi-hole machine and ran:
 
 ```bash
 resolvectl status
@@ -138,21 +143,35 @@ I logged into my GL.iNet router and went to:
 
 `LAN > DHCP`
 
-Then changed:
+Then I set:
 
 `DNS Server 1: 192.168.8.169`
 
 (My Pi-hole static IP)
 
-Changed DNS > DNS Server Settings > ***Automatic***
+Then went back to:
 
-  - I had this manually set to my Pi-Hole but that was not working. This needs to be ***Automatic*** while you edit DCHP Server instead
+`Network > DNS > DNS Server Settings > ***Automatic***
+
+  - I had this manually set to my Pi-Hole but that was not working. This needs to be ***Automatic*** while you edit DCHP Server instead`
 
 Saved. Applied. Restarted DHCP.
 
 Boom.
 
-Everything started resolving instantly!
+![Pi-hole Dashboard / Client Activity](/assets/img/pi-hole-activity.webp)
+
+Everything started resolving instantly! This was one of the most satisfying moments in my homelab. Not because I'm trying to bypass anything, hide from anyone, but because I now have full control of my own network.
+
+Ads, trackers, telemetry aren't cute little ***"features"***. They operate quietly constantly running in the background. Every single device, every app, every webpage all quietly reach out to domains that you never even asked for.
+
+We somehow have normalized this behavior, but I haven't. Blocking them isn't paranoia. This is good network hygiene. It's about limiting the unnecessary exposure, reducing the silent data collections, and deciding what traffic leaves my network.
+
+Say what you want but there is no way Netflix should have over 4,500 hits in less than 24 hours when we don't have the TV on and no body is streaming.
+
+Here are the top domains my network was blocking in less than 24 hours of having Pi-hole running.
+
+![Netflix Hits](/assets/img/netflix-hits.webp)
 
 ---
 
@@ -174,7 +193,7 @@ Once DHCP began distributing the Pi-hole IP directly, everything worked.
 1. I forgot that chaning DNS in one place, doesn't mean DHCP is distributing the same DNS server.
 2. `br0` + static IP is the right way for Pi-hole on Unraid.
 3. Always check `resolvectl status` before panicking.
-4. Large blocklists work fine — but misconfigured DNS does not.
+4. Large blocklists work fine, but misconfigured DNS does not.
 
 ---
 
