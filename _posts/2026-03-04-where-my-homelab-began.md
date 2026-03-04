@@ -11,7 +11,7 @@ image:
 > This post will evolve as my lab evolves.
 > What once started small is slowly turning into something much bigger.
 
-# Where This Lab Actually Started
+## Where This Lab Actually Started
 
 Before the NUC.
 Before Unraid.

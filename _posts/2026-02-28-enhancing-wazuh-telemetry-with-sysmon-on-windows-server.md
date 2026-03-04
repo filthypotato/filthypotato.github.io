@@ -9,7 +9,7 @@ image:
 
 ---
 
-# Enhancing Wazuh Telemetry with Sysmon on Windows Server
+## Enhancing Wazuh Telemetry with Sysmon on Windows Server
 
 Wazuh pulls a lot of data from Windows Event Viewer by default. But after digging through the logs, I realized it's not rich enough for the level of visibility I want.
 
