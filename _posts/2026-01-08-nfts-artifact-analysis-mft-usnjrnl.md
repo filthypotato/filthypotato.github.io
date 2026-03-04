@@ -8,6 +8,8 @@ image:
   alt: NTFS journal and MFT forensic analysis
 ---
 
+{:toc}
+
 ## Overview
 
 This lab was focused on digging into NTFS artifacts directly instead of relying only on GUI output. I worked with raw `$MFT` fragments, interpreted `FILETIME` values manually, and analyzed `$UsnJrnl:$J` entries to track file activity that wasn’t visible in the file system.

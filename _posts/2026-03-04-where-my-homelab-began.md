@@ -11,6 +11,8 @@ image:
 > This post will evolve as my lab evolves.
 > What once started small is slowly turning into something much bigger.
 
+{:toc}
+
 ## Where This Lab Actually Started
 
 Before the NUC.

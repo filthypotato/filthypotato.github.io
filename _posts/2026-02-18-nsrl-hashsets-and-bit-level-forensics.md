@@ -8,6 +8,8 @@ image:
   alt:  Known given pseudo hashset for lab
 ---
 
+{:toc}
+
 ## Overview
 
 This set of labs was basically all about using hash sets the right way (known good vs known bad), getting Autopsy configured so it doesn’t light up fake system files, and then doing a bit-level recovery with WinHex. Tools I used were **Autopsy**, **FTK Imager**, **OSFMount**, and **WinHex** on **Windows 11**.

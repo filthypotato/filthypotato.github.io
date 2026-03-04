@@ -9,6 +9,8 @@ image:
   alt: Active Directory Setup
 ---
 
+{:toc}
+
 ## Introduction
 
 In this lab, I set up an Active Directory Domain Controller using Windows Server 2025 and connected a Windows 10 client to simulate a real-world enterprise environment.

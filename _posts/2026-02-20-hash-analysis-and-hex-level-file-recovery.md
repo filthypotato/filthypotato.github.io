@@ -8,6 +8,8 @@ image:
   alt: Digital forensic command line and hex editor analysis
 ---
 
+{:toc}
+
 ## Case Overview
 
 In this lab scenario, I was provided with a USB drive containing files relevant to a legal matter. Since returning to a lab environment was not possible, the objective was to generate a quick but thorough report directly from a Windows system.

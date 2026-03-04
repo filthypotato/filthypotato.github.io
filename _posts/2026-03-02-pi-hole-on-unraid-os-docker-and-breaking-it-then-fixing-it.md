@@ -8,6 +8,8 @@ image:
   alt: Pi-hole dashboard showing blocked queries
 ---
 
+{:toc}
+
 ## Installing Pi-hole on Unraid (br0 + Static IP) - And Breaking My Network (Before Fixing It)
 
 I wanted better DNS visibility and ad blocking inside my homelab and my home network.

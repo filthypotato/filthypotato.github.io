@@ -8,6 +8,8 @@ image:
   alt: Digital forensics partition recovery lab
 ---
 
+{:toc}
+
 ## Partition Recovery with Autopsy + FTK Imager
 
 This lab focused on recovering a deleted partition from an E01 forensic image and validating everything properly.

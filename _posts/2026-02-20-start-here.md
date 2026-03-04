@@ -6,6 +6,9 @@ tags: [Cybersecurity, Homelab, Growth]
 pin: true
 ---
 
+
+{:toc}
+
 ## Why I Made This Blog
 
 I got tired of just watching tutorials thinking I was learning.

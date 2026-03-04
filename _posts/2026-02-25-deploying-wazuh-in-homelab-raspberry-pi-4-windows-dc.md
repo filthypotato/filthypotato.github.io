@@ -8,6 +8,8 @@ image:
   alt: Wazuh authentication activity on my Domain Controller.
 ---
 
+{:toc}
+
 ## Deploying Wazuh in My Homelab (Raspberry Pi + Windows DC)
 
 I had never worked with a SIEM before, so instead of just reading about one, I decided to build it myself.
