@@ -1,5 +1,5 @@
 ---
-title: "When My External Hard Drive Corrupted… So I Did Some Digital Forensics"
+title: "Recovering Files From a Corrupted External Drive Using ddrescue, TestDisk, and PhotoRec"
 date: 2026-03-09 08:00:00 -0800
 categories: [Homelab, Digital Forensics]
 tags: [Forensics, Data Recovery, Linux, Photorec, Testdisk, Ddrescue]
@@ -13,6 +13,8 @@ image:
 >
 > [Partition Recovery with Autopsy + FTK Imager](/posts/partition-recovery-autopsy-ftk-imager/)
 
+{:toc}
+
 ## The Problem
 
 Recently one of my external hard drives decided to betray me.
@@ -24,6 +26,8 @@ No folders.
 No filenames.
 
 Just empty space where the data used to be.
+
+![Empty External Drive](/assets/img/empty-external-drive.webp)
 
 Instead of panicking and randomly copying files around (which can actually make recovery worse), I decided to treat the situation like a **small digital forensics investigation**.
 
@@ -72,6 +76,18 @@ This created a **raw disk image** that I could safely analyze without touching t
 
 ---
 
+## Verifying the Disk Image
+
+After creating the disk image, I generated a SHA256 hash to document the integrity of the forensic copy.
+
+```bash
+sha256sum bookdrive.img
+```
+
+Output:
+
+`7b5c4d3fef360881bd91a6748d42c06e322a1678dea905e9bd553fa8a8cda124  bookdrive.img`
+
 ## A Common Misconception about Deleted Files
 
 Most people think when something is deleted from a computer or drive… that it’s gone forever.
@@ -112,7 +128,7 @@ That meant it was time to move on to **file carving**.
 
 Since the filesystem metadata was damaged, I used **PhotoRec** to scan the disk image sector-by-sector looking for recoverable files.
 
-PhotoRec works by identifying **file signatures** instead of relying on the filesystem.
+PhotoRec works by identifying **file signatures** instead of relying on the filesystem. While Photorec and TestDisk are not hardware write blockers, but they are designed to operate in a read only manner to prevent data modification during recovery.
 
 That means it can recover files even when:
 
@@ -182,16 +198,59 @@ Sorting and rebuilding the collection becomes part of the recovery process.
 
 ---
 
+## Final Recovery Results
+
+After letting PhotoRec run for several hours, the scan ended up recovering **over 50GB of data** from the damaged drive.
+
+Most of the recovered files were exactly what I was hoping to find — **the book collection that had seemingly disappeared.**
+
+In total the recovery process produced:
+
+- **1,160 recovered files**
+- **About 50.7GB of data**
+- Mostly **PDF and archive files**
+
+Even though the original filenames and folder structure were lost, the actual content of the files survived.
+
+![Recovered book collection folder](/assets/img/books-recovered-folder.webp)
+
+Once I sorted through the recovered files, it became clear that **most of the original collection had survived the corruption.**
+
+What originally looked like a completely wiped drive turned out to be **a recoverable filesystem failure**.
+
+---
+
+## Why This Matters
+
+This situation is a perfect example of something many people misunderstand about data loss.
+
+Just because files **disappear from the filesystem** does not mean the data itself is gone.
+
+Until those sectors are overwritten, forensic recovery tools can often still reconstruct the files directly from the raw disk.
+
+This is why forensic investigators are able to recover evidence from drives that appear empty.
+
+---
+
 ## Lessons Learned
 
-Even before the recovery finishes, this experience reinforced several important lessons:
+While the recovery was successful, the experience reinforced several important lessons:
 
 - Always maintain backups of important data
 - Never perform recovery directly on the original disk
 - Creating a disk image first protects the original evidence
 - File carving tools can recover data even when filesystems are destroyed
 
+> **If data only exists in one place, it’s already at risk.**
+
+From now on this collection will exist in **multiple locations**, not just a single external drive.
+
+Because sometimes recovery works…
+
+…and sometimes it doesn't.
+
 ---
 
+*If it's not broken, fix it til it is.*
 
 

@@ -227,4 +227,4 @@ This is my documented progress.
 
 ---
 
-*If it's not broken, fix it til it is*
+*If it's not broken, fix it til it is.*
