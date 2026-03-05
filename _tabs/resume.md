@@ -117,19 +117,20 @@ Army Commendation Medal (ARCOM)
 
 ### Active Directory Enterprise Lab (Windows Server 2025 + Windows 11)
 
-- Built domain environment with domain controller, DNS, Group Policy, and user management
-- Deployed Windows clients and simulated enterprise login/authentication workflows
-- Configured network segmentation and internal DNS resolution
-- Practiced account lockout policies, log auditing, and event monitoring
+- Built domain environment with domain controller, DNS, Group Policy security policies
+- Implemented endpoint telemetry using Sysmon and Wazuh SIEM
+- Created custom detection rules to identify suspicious activity that include privilege escalation and more.
+- Investigated simulated attacker activity using Windows Event Manger logs and SIEM dashboard
+- Practiced log analysis and event correlation aligned with MITRE ATT&CK
 
 ---
 
 ### Attack & Defense Lab (Windows + Linux Targets)
 
 - Deployed vulnerable machines (Metasploitable2, Ubuntu test servers)
-- Conducted vulnerability scans using Nmap
-- Exploited services using Metasploit framework
-- Documented findings and remediation strategies
+- Simulated attacker techniques such as network scanning, service exploitation and credential attacks
+- Analyzed attack telemetry to validate detection capabilities within my SIEM environment
+- Documented attack technquies and mapped them to MITRE ATT&CK framework
 
 ---
 
