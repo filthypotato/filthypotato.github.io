@@ -1,6 +1,6 @@
 ---
 title: "Detecting IMSI Catchers with Rayhunter"
-date: 2026-03-04 20:00:00 -0800
+date: 2026-03-04 19:00:00 -0800
 categories: [Homelab, Security]
 tags: [Rayhunter, Privacy, Surveillance, IMSI Catcher, Homelab]
 image:
