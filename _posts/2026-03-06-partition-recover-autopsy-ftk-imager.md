@@ -1,6 +1,6 @@
 ---
 title: "Partition Recovery with Autopsy + FTK Imager (Deleted Partition Analysis)"
-date: 2026-03-06 09:00:00 -0800
+date: 2026-03-06
 categories: [Digital Forensics, Labs]
 tags: [Autopsy, FTK Imager, Partition Recovery, e01, Forensic Imaging]
 image:
