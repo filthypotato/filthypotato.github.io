@@ -27,9 +27,11 @@ No filenames.
 
 Just empty space where the data used to be.
 
+Since I have recently started to study digital forensics, I figured this would be the perfect way to put those skills to the test instead of panicking and assuming everything was actually deleted.
+
 ![Empty External Drive](/assets/img/empty-external-drive.webp)
 
-Instead of panicking and randomly copying files around (which can actually make recovery worse), I decided to treat the situation like a **small digital forensics investigation**.
+I decided to treat the situation like a **small digital forensics investigation** instead of a normal data recovery.
 
 ---
 

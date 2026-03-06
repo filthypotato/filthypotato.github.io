@@ -72,7 +72,7 @@ The `.mft` fragments are important as well because they tie back to NTFS metadat
 
 ---
 
-#### Screenshot – Keyword Hits
+#### Screenshot - Keyword Hits
 
 ![Keyword Hits](assets/img/08-1-keyword-results.webp)
 
@@ -110,11 +110,9 @@ Inside the Evidence Tree, I expanded the image and saw:
 - [Recovered] Partition 1 [10MB]
 - Unpartitioned Space
 
-That recovered partition is the entire reason we’re here.
-
 ---
 
-#### Screenshot – Recovered Partition
+#### Screenshot - Recovered Partition
 
 ![Recovered Partition](assets/img/08-2-recovered-partition.webp)
 
@@ -135,8 +133,6 @@ Case Information entered:
 - Unique Description: Deleted partition recovery
 - Examiner: Tylor Romine
 - Notes: Image creation of deleted partition from image file 08-2_Partition_Recovery.E01
-
-Simple, clean documentation.
 
 ---
 
@@ -179,8 +175,6 @@ Autopsy provided artifact-level visibility tied to the keyword investigation.
 
 FTK Imager provided full partition-level recovery with hash validation.
 
-Two different tools. Two different strengths. Same forensic workflow.
-
 ---
 
 ## Final Output
@@ -190,8 +184,6 @@ Generated Files:
 - 08-1_Analysis_Report.xlsx
 - 08-2-Recovered-Deleted-Part.001
 - 08-2-Recovered-Deleted-Part.001.txt
-
-Everything verified. Everything documented.
 
 ---
 
