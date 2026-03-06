@@ -65,7 +65,7 @@ analytics:
     id: # fill in your GoatCounter ID
   umami:
     id: 281d0d74-c7d8-4668-a5c7-e6ce22fffb4b # fill in your Umami ID
-    domain: https://cloud.umami.iscloud.umami.is # fill in your Umami domain
+    domain: https://stats.tylor-romine.com # fill in your Umami domain
   matomo:
     id: # fill in your Matomo ID
     domain: # fill in your Matomo domain
