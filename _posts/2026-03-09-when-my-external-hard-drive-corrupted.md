@@ -1,6 +1,6 @@
 ---
 title: "Recovering Files From a Corrupted External Drive Using ddrescue, TestDisk, and PhotoRec"
-date: 2026-03-09 08:00:00 -0800
+date: 2026-03-09
 categories: [Homelab, Digital Forensics]
 tags: [Forensics, Data Recovery, Linux, Photorec, Testdisk, Ddrescue]
 image:
