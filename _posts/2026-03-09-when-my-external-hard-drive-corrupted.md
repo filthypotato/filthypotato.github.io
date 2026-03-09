@@ -177,7 +177,7 @@ One thing that surprises people during recovery is that **filenames and folders 
 
 That's because filenames are stored in filesystem metadata.
 
-When that metadata becomes corrupted, tools like PhotoRec can still recover the raw files — but they cannot reconstruct the original directory structure.
+When that metadata becomes corrupted, tools like PhotoRec can still recover the raw files, but they cannot reconstruct the original directory structure.
 
 So recovered files typically appear as:
 
@@ -204,7 +204,7 @@ Sorting and rebuilding the collection becomes part of the recovery process.
 
 After letting PhotoRec run for several hours, the scan ended up recovering **over 50GB of data** from the damaged drive.
 
-Most of the recovered files were exactly what I was hoping to find — **the book collection that had seemingly disappeared.**
+Most of the recovered files were exactly what I was hoping to find, **the book collection that had seemingly disappeared.**
 
 In total the recovery process produced:
 
