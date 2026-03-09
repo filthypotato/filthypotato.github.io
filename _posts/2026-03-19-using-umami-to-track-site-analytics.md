@@ -3,6 +3,9 @@ title: "Implementing a Self-Hosted Umami Analytics Dashboard with Cloudflare Zer
 date: 2026-03-19
 categories: [Homelab, Security]
 tags: [Umami, Cloudflare, Zero-Trust, Self-Hosted-Analytics, Docker, Homelab]
+image:
+  path: /assets/img/umami.webp
+  alt: Umami!
 ---
 
 > I wanted real analytics for my blog - but I didn’t want Google tracking my visitors.
@@ -25,7 +28,7 @@ Most people just drop **Google Analytics** into their site and call it a day. Bu
 
 That’s when I discovered **Umami analytics**.
 
-Umami is a **lightweight, privacy-friendly, open source analytics platform** that you can self-host. It gives you clean dashboards, real-time visitor stats, and useful insights without invasive tracking.
+> Umami is a **lightweight, privacy-friendly, open source analytics platform** that you can self-host. It provides clean dashboards and useful visitor insights **without cookies or invasive tracking**.
 
 Immediately I thought:
 
@@ -63,6 +66,8 @@ Visitor
 
 - Umami + PostgreSQL
 ```
+
+![Umami Docker Stack](/assets/img/unraid-docker-stack-umami.webp)
 
 Dashboard access:
 
@@ -232,6 +237,8 @@ That meant Cloudflare was blocking requests to:
 /api/send
 ```
 
+
+
 However, these endpoints **must remain public** so that visitors can send analytics events.
 
 ---
@@ -273,10 +280,15 @@ Using the browser developer tools network tab I confirmed the requests were succ
 script.js → 200
 /send → 200
 ```
+![Testing network script protocol in brower dev tools](/assets/img/network-script-dev-tools.webp)
+
+![Testing network send protocol in brower dev tools](/assets/img/network-send-dev-tool.webp)
 
 This confirmed that the analytics event was successfully recorded.
 
 Shortly after, my Umami dashboard began showing visitors.
+
+![Real time Umami dashboard](/assets/img/my-blog-stats.webp)
 
 ---
 
