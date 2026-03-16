@@ -1,6 +1,6 @@
 ---
 title: "Self-Hosting Immich on Unraid (My Google Photos Replacement)"
-date: 2026-03-25
+date: 2026-03-30
 categories: [Homelab, Self-Hosting]
 tags: [Immich, Unraid, Docker, Homelab, Privacy, Self-Hosted]
 image:

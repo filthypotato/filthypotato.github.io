@@ -1,8 +1,8 @@
 ---
 title: "Building a Grafana + Prometheus Monitoring Stack in My Unraid Homelab"
-date: 2026-03-28
+date: 2026-04-13
 categories: [Homelab, Monitoring, Unraid]
-tags: [Grafana, Prometheus, Cadvisor, Node Exporter, Unraid, Docker, Observability, Homelab]
+tags: [Grafana, Prometheus, Cadvisor, Node Exporter, Unraid, Docker, Homelab]
 image:
   path: /assets/img/node-exporter.webp
   alt: Grafana and Prometheus monitoring stack running in an Unraid homelab
@@ -62,8 +62,8 @@ The stack ended up looking like this:
 
 ```text
 Unraid Host
-  - Node Exporter → host metrics
-  - cAdvisor → container metrics
+  - Node Exporter > host metrics
+  - cAdvisor > container metrics
 
 Prometheus
   - collects and stores metrics
@@ -139,7 +139,6 @@ Prometheus ran on:
 ```
 http://192.168.8.159:9090
 ```
-
 
 ---
 

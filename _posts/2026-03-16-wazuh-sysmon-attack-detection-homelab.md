@@ -1,6 +1,6 @@
 ---
 title: "Threat Detection with Wazuh + Sysmon: Simulating Attacks in My Homelab"
-date: 2026-03-15 08:00:00 -0800
+date: 2026-03-16
 categories: [Homelab, Blue Team]
 tags: [Wazuh, Sysmon, Detection Engineering, Homelab, Cybersecurity]
 image:
@@ -22,9 +22,9 @@ So instead of just staring at empty dashboards, I had a friend connect to one of
 
 Nothing crazy. Just enough activity to generate logs so I could see what actually shows up in **Sysmon and Wazuh**.
 
-The goal wasn't to break anything, it was to **generate telemetry** that I can analyze using **Wazuh and Sysmon**.
+This allowed me practice the same workflow SOC analysts use everyday.
 
-This allows me practice the same workflow SOC analysts use.
+This was my first real detection simulation with someone actively interacting within my environment.
 
 ```
 Attack simulation
@@ -125,6 +125,10 @@ From a defender's perspective this produced:
 
 This type of activity is a clear indicator of **reconnaissance behavior**.
 
+I did not have a true IDS tool for network detection so I did not see his scans come through.
+
+But he did confirm that he saw RDP port: ***3389*** was open.
+
 ---
 
 ### 2. Credential Attack - RDP Brute Force
@@ -139,9 +143,9 @@ This generated a series of **Windows Security Events** including:
 
 | Event ID | Description |
 |--------|-------------|
-| 4625 | Failed login attempts |
-| 4624 | Successful login |
-| 4672 | Special privileges assigned |
+| 4625   | Failed login attempts |
+| 4624   | Successful login |
+| 4672   | Special privileges assigned |
 
 In the logs this appeared as a clear pattern:
 
@@ -179,6 +183,8 @@ Attackers often run multiple reconnaissance tools in parallel while attempting a
 ---
 
 ### 4. Initial Access - Remote Desktop Session
+
+![Login Attempts on RDP using Hydra](/assets/img/login-attempts-rdp.webp)
 
 Eventually one of the authentication attempts succeeded and an **RDP session was established**.
 
@@ -222,6 +228,8 @@ Example:
 
 PowerShell downloading remote content is a common technique used in many real-world attacks.
 
+![Powersehll command execution detected by Sysmon](/assets/img/powershell-cmd-ran.webp)
+
 ---
 
 ### Reconstructed Attack Chain
@@ -249,8 +257,13 @@ During this test several common attacker techniques were simulated. These behavi
 | T1021 | Remote Services (RDP) |
 | T1059 | Command Execution |
 | T1105 | Ingress Tool Transfer |
+| T1078 | Evasion Persistence |
 
 Mapping activity to MITRE ATT&CK helps defenders understand attacker behavior patterns and improve detection rules.
+
+![T1021 RDP Services MITRE ATT&CK](/assets/img/T1021-rdp-services-mitre-att&ck.webp)
+
+![MITRE ATT&CK Known Techniques](/assets/img/T1078-mitre-att&ck.webp)
 
 ---
 
@@ -274,7 +287,7 @@ I looked at:
 
 Below is an example of the alerts generated during the test.
 
-![Wazuh attack alerts](/assets/img/wazuh-sysmon-attack-lab.webp)
+![Wazuh attack alerts](/assets/img/alerts-generated-during-test.webp)
 
 ---
 
@@ -338,7 +351,7 @@ Examples include:
 Example custom Wazuh rule I previously created to detect suspicious `cipher.exe` activity:
 
 ```xml
-<rule id="100010" level="10">
+<rule id="100100" level="13">
   <if_sid>61603</if_sid>
   <match>cipher.exe</match>
   <description>Possible anti-forensics activity detected</description>
@@ -347,11 +360,15 @@ Example custom Wazuh rule I previously created to detect suspicious `cipher.exe`
 
 This process is known as **detection engineering**.
 
+![Cipher Rule Implemented and Detected](/assets/img/cipher-rule.webp)
+
 ---
 
 ## Why This Is Valuable
 
-Running controlled attacks in a homelab helps build real-world security skills.
+This helped me understand what is happening behind the scenes of a SOC enviroment when attacks come in.
+
+This was well worth the time to plan out, and thank you to [Blake Faust](https://blake-faust.com/) for being the attacker!
 
 Instead of just reading alerts, this allows me to practice:
 
@@ -366,7 +383,7 @@ All in a **safe environment**.
 
 ## What This Lab Demonstrated
 
-This test showed how a simple attack chain can be reconstructed using endpoint telemetry and SIEM analysis.
+These tests showed how a simple attack chain can be reconstructed using endpoint telemetry and SIEM analysis.
 
 Even basic techniques like scanning and password guessing leave a clear trail when proper logging is enabled.
 

@@ -1,6 +1,6 @@
 ---
 title: "Implementing a Self-Hosted Umami Analytics Dashboard with Cloudflare Zero Trust"
-date: 2026-03-19
+date: 2026-03-23
 categories: [Homelab, Security]
 tags: [Umami, Cloudflare, Zero-Trust, Self-Hosted-Analytics, Docker, Homelab]
 image:
