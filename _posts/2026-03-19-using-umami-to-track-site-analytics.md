@@ -5,7 +5,7 @@ categories: [Homelab, Security]
 tags: [Umami, Cloudflare, Zero-Trust, Self-Hosted-Analytics, Docker, Homelab]
 image:
   path: /assets/img/umami.webp
-  alt: Umami!
+  alt: Umami
 ---
 
 > I wanted real analytics for my blog - but I didn’t want Google tracking my visitors.
