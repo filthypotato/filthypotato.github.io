@@ -1,7 +1,7 @@
 ---
 title: "Enhancing Wazuh Telemetry with Sysmon on Windows Server"
 date: 2026-02-28 10:00:00 -0800
-categories: [Homelab, Blue Team, Detection Engineering]
+categories: [Homelab, Blue Team, detection-engineering]
 tags: [Wazuh, Sysmon, Windows Server, Telemetry, SOC, Logging]
 image:
   path: /assets/img/wazuh-standard-featured-picture.webp

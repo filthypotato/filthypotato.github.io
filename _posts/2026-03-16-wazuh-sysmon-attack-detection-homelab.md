@@ -1,6 +1,6 @@
 ---
 title: "Threat Detection with Wazuh + Sysmon: Simulating Attacks in My Homelab"
-date: 2026-03-16
+date: 2026-03-15
 categories: [Homelab, Blue Team]
 tags: [Wazuh, Sysmon, Detection Engineering, Homelab, Cybersecurity]
 image:
@@ -368,7 +368,9 @@ This process is known as **detection engineering**.
 
 This helped me understand what is happening behind the scenes of a SOC enviroment when attacks come in.
 
-This was well worth the time to plan out, and thank you to [Blake Faust](https://blake-faust.com/) for being the attacker!
+This valuable as this is not the best right up as this is my first time detecting attacks and documenting as I go.
+
+This was well worth the time to plan out, and thank you to [Blake Faust](https://blake-faust.com/) for being the attack!
 
 Instead of just reading alerts, this allows me to practice:
 

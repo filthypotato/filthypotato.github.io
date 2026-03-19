@@ -1,10 +1,112 @@
 ---
 title: "Deploying pfSense on a Protectli Firewall in My Homelab"
 date: 2026-04-20
-categories: [Homelab, Networking, Blue-Team]
-tags: [pfSense, Protectli, Wazuh, Firewall, Homelab, Detection-Engineering, Networking]
+categories: [Homelab, Networking, Blue Team]
+tags: [pfSense, Protectli, Wazuh, Firewall, Homelab, Detection Engineering, Networking]
+
+---
+
+## Why I Added pfSense to My Lab
+
+While building out my homelab security environment, I realized something pretty quickly:
+
+**You can’t really practice detection engineering without real network telemetry.**
+
+Up until this point I already had:
+
+- A **Raspberry Pi 4 running Wazuh Manager**
+- A **Windows Server domain controller**
+- Multiple **Windows clients with Sysmon**
+- A **Kali attack machine**
+- Several services running on my **Unraid server**
+
+That was already a solid start, but one big piece was missing:
+
+**A real firewall generating logs.**
+
+I had previously installed OPNSense on my Unraid server but it was conflicing with a lot of the network so I bought a Protectli Vault to have more segmentation on my devices and network.
+
+So I decided to install **pfSense on a Protectli firewall appliance** and work it into my homelab so I could generate real firewall telemetry and send it into **Wazuh**.
+
+This post covers the full process, including:
+
+- Installing pfSense on the Protectli
+- Initial network setup
+- What I broke
+- DNS issues
+- Pi-hole issues
+- Why my logs were not showing in Wazuh at first
+- How I fixed everything
+
+---
+
+## Hardware Used
+
+For this setup I used a **Protectli firewall appliance**.
+
+These little fanless boxes are great for homelabs because they:
+
+- use very little power
+- have multiple NICs
+- are made for firewall operating systems like **pfSense** and **OPNsense**
+
+My network path now looks like this:
+
+```text
+Verizon Router
+        |
+GL.iNet Repeater
+        |
+Protectli Firewall (pfSense)
+        |
+Switch
+        |
+Homelab Systems
+```
+
+My lab subnet is:
+
+```text
+192.168.50.0/24
+```
+
+---
+
+## Creating the pfSense Boot USB
+
+I created the installer USB from my **Arch Linux workstation**.
+
+First I downloaded the pfSense installer image from Netgate.
+Then I wrote it to a USB drive.
+
+Example command:
+
+```bash
+sudo dd if=pfSense-CE.iso of=/dev/sdX bs=4M status=progress
+sync
+```
+
+After writing the image, I plugged the USB into the Protectli and booted from it.
+
+---
+
+## Step 2: Booting the Protectli
+
+After powering on the Protectli, I entered the BIOS and changed the boot order so it would boot from the USB installer first.
+
+```text
+... (556 lines left)
+
+message.txt
+15 KB
+﻿
+---
+title: "Deploying pfSense on a Protectli Firewall in My Homelab"
+date: 2026-04-20
+categories: [Homelab, Networking, Blue Team]
+tags: [pfSense, Protectli, Wazuh, Firewall, Homelab, detection-engineering, Networking]
 image:
-  path: /assets/img/posts/pfsense/protectli-pfsense-cover.webp
+  path: /assets/img/protectli-pfsense-cover.png
   alt: pfSense running on a Protectli firewall in my homelab
 description: Installing pfSense on a Protectli firewall, rebuilding my network path, breaking DNS, fixing Pi-hole, and finally getting firewall logs flowing into Wazuh.
 ---
@@ -654,3 +756,4 @@ But once it finally clicks, the lab becomes way more powerful.
 ---
 
 *If it's not broken, fix it til it is.*
+

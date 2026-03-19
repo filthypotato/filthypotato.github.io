@@ -2,7 +2,7 @@
 title: "Building a Grafana + Prometheus Monitoring Stack in My Unraid Homelab"
 date: 2026-04-13
 categories: [Homelab, Monitoring, Unraid]
-tags: [Grafana, Prometheus, Cadvisor, Node Exporter, Unraid, Docker, Homelab]
+tags: [Grafana, Prometheus, Cadvisor, Node Exporter, Unraid, Docker, Observability, Homelab]
 image:
   path: /assets/img/node-exporter.webp
   alt: Grafana and Prometheus monitoring stack running in an Unraid homelab
