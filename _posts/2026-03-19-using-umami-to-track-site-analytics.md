@@ -1,6 +1,6 @@
 ---
 title: "Implementing a Self-Hosted Umami Analytics Dashboard with Cloudflare Zero Trust"
-date: 2026-03-23
+date: 2026-03-19
 categories: [Homelab, Security]
 tags: [Umami, Cloudflare, Zero-Trust, Self-Hosted-Analytics, Docker, Homelab]
 image:
@@ -236,8 +236,6 @@ That meant Cloudflare was blocking requests to:
 /script.js
 /api/send
 ```
-
-
 
 However, these endpoints **must remain public** so that visitors can send analytics events.
 
