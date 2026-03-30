@@ -8,6 +8,8 @@ image:
   alt: Grafana and Prometheus monitoring stack running in an Unraid homelab
 ---
 
+> Note: This setup was originally built on Unraid, I’ve since migrated my homelab to Proxmox, but the concepts still apply.
+
 I wanted better visibility into my homelab.
 
 I already had a growing Unraid server with a bunch of containers running on it, but I did not have a clean way to actually monitor what was happening across the host and Docker workloads in one place.

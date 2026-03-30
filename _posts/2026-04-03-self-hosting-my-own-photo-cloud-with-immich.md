@@ -1,6 +1,6 @@
 ---
 title: "Self-Hosting Immich on Unraid (My Google Photos Replacement)"
-date: 2026-03-30
+date: 2026-04-03
 categories: [Homelab, Self-Hosting]
 tags: [Immich, Unraid, Docker, Homelab, Privacy, Self-Hosted]
 image:
@@ -8,8 +8,11 @@ image:
   alt: Immich self hosted photo server
 ---
 
-> I wanted to move away from Google Photos and start hosting my own photo backup system.
-> After some trial and error, I deployed **Immich** on my **Unraid homelab** using Docker along with PostgreSQL and Redis.
+> Note: This setup was originally built on Unraid, I’ve since migrated my homelab to Proxmox, but the concepts still apply.
+
+I wanted to move away from Google Photos and start hosting my own photo backup system.
+
+After some trial and error, I deployed **Immich** on my **Unraid homelab** using Docker along with PostgreSQL and Redis.
 
 The result is essentially **my own private Google Photos replacement** running locally on my server.
 
