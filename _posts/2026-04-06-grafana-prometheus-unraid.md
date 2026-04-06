@@ -1,6 +1,6 @@
 ---
 title: "Building a Grafana + Prometheus Monitoring Stack in My Unraid Homelab"
-date: 2026-04-13
+date: 2026-04-06
 categories: [Homelab, Monitoring, Unraid]
 tags: [Grafana, Prometheus, Cadvisor, Node Exporter, Unraid, Docker, Observability, Homelab]
 image:
