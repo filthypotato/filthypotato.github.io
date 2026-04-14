@@ -1,6 +1,6 @@
 ---
 title: "Deploying pfSense on a Protectli Firewall in My Homelab"
-date: 2026-04-20
+date: 2026-04-14
 categories: [Homelab, Networking, Blue Team]
 tags: [pfSense, Protectli, Wazuh, Firewall, Homelab, Detection Engineering, Networking]
 image:
